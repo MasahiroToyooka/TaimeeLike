@@ -1,0 +1,6 @@
+framework module Pods_TaimeeLike {
+  umbrella header "Pods-TaimeeLike-umbrella.h"
+
+  export *
+  module * { export * }
+}

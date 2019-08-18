@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
-		C169DA73230692E9001EBE1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA72230692E9001EBE1E /* ViewController.swift */; };
 		C169DA76230692E9001EBE1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Main.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
 		C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */; };
+		C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FF485B2309211A002B2CBD /* HomeViewController.swift */; };
+		FA15AD3E930F23F1AC378714 /* Pods_TaimeeLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74D43237527C466C8DF2B090 /* Pods-TaimeeLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.release.xcconfig"; sourceTree = "<group>"; };
+		AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaimeeLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C169DA72230692E9001EBE1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C169DA77230692EA001EBE1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C169DA7A230692EA001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C169DA7C230692EA001EBE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1FF485B2309211A002B2CBD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA15AD3E930F23F1AC378714 /* Pods_TaimeeLike.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D11351DD734BEF8A7294F3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C169DA64230692E9001EBE1E = {
 			isa = PBXGroup;
 			children = (
 				C169DA6F230692E9001EBE1E /* TaimeeLike */,
 				C169DA6E230692E9001EBE1E /* Products */,
+				E03491BF8C38DA804A5BECC9 /* Pods */,
+				5D11351DD734BEF8A7294F3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +69,39 @@
 		C169DA6F230692E9001EBE1E /* TaimeeLike */ = {
 			isa = PBXGroup;
 			children = (
+				C1FF4859230920A9002B2CBD /* Home */,
+				C1FF485A230920B8002B2CBD /* Profile */,
 				C169DA70230692E9001EBE1E /* AppDelegate.swift */,
-				C169DA72230692E9001EBE1E /* ViewController.swift */,
 				C169DA74230692E9001EBE1E /* Main.storyboard */,
 				C169DA77230692EA001EBE1E /* Assets.xcassets */,
 				C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */,
 				C169DA7C230692EA001EBE1E /* Info.plist */,
 			);
 			path = TaimeeLike;
+			sourceTree = "<group>";
+		};
+		C1FF4859230920A9002B2CBD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1FF485B2309211A002B2CBD /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1FF485A230920B8002B2CBD /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E03491BF8C38DA804A5BECC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */,
+				74D43237527C466C8DF2B090 /* Pods-TaimeeLike.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C169DA7F230692EA001EBE1E /* Build configuration list for PBXNativeTarget "TaimeeLike" */;
 			buildPhases = (
+				BB8139BCAEBA8E9EA354C661 /* [CP] Check Pods Manifest.lock */,
 				C169DA69230692E9001EBE1E /* Sources */,
 				C169DA6A230692E9001EBE1E /* Frameworks */,
 				C169DA6B230692E9001EBE1E /* Resources */,
+				6161F211D75DFECD0E8FBB5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +172,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6161F211D75DFECD0E8FBB5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB8139BCAEBA8E9EA354C661 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TaimeeLike-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C169DA69230692E9001EBE1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C169DA73230692E9001EBE1E /* ViewController.swift in Sources */,
 				C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */,
+				C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +361,11 @@
 		};
 		C169DA80230692EA001EBE1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +380,11 @@
 		};
 		C169DA81230692EA001EBE1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D43237527C466C8DF2B090 /* Pods-TaimeeLike.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
