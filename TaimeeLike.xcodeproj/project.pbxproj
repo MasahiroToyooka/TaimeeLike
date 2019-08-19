@@ -7,24 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A140230A65F9001B2BE0 /* ProfileViewController.swift */; };
+		C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */; };
+		C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A147230A88AA001B2BE0 /* ContainedButton .swift */; };
+		C125A14A230A8967001B2BE0 /* OutLinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A149230A8967001B2BE0 /* OutLinedButton.swift */; };
+		C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14B230A899D001B2BE0 /* TextButton.swift */; };
+		C125A14E230A8AA8001B2BE0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14D230A8AA8001B2BE0 /* UIView.swift */; };
+		C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14F230A8AFD001B2BE0 /* TextField.swift */; };
+		C125A154230A9663001B2BE0 /* DetailJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C125A153230A9663001B2BE0 /* DetailJob.storyboard */; };
+		C125A156230A96A2001B2BE0 /* DetailJobController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A155230A96A2001B2BE0 /* DetailJobController.swift */; };
+		C125A158230A981E001B2BE0 /* DetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A157230A981E001B2BE0 /* DetailTransition.swift */; };
+		C125A15A230ABEAA001B2BE0 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A159230ABEAA001B2BE0 /* DetailInteractor.swift */; };
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
-		C169DA76230692E9001EBE1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Main.storyboard */; };
+		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
 		C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */; };
 		C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FF485B2309211A002B2CBD /* HomeViewController.swift */; };
+		C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FF4860230A5E90002B2CBD /* Profile.storyboard */; };
 		FA15AD3E930F23F1AC378714 /* Pods_TaimeeLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74D43237527C466C8DF2B090 /* Pods-TaimeeLike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.release.xcconfig"; sourceTree = "<group>"; };
 		AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaimeeLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C125A140230A65F9001B2BE0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessage.swift; sourceTree = "<group>"; };
+		C125A147230A88AA001B2BE0 /* ContainedButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainedButton .swift"; sourceTree = "<group>"; };
+		C125A149230A8967001B2BE0 /* OutLinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLinedButton.swift; sourceTree = "<group>"; };
+		C125A14B230A899D001B2BE0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		C125A14D230A8AA8001B2BE0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C125A14F230A8AFD001B2BE0 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		C125A153230A9663001B2BE0 /* DetailJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailJob.storyboard; sourceTree = "<group>"; };
+		C125A155230A96A2001B2BE0 /* DetailJobController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailJobController.swift; sourceTree = "<group>"; };
+		C125A157230A981E001B2BE0 /* DetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransition.swift; sourceTree = "<group>"; };
+		C125A159230ABEAA001B2BE0 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		C169DA77230692EA001EBE1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C169DA7A230692EA001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C169DA7C230692EA001EBE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1FF485B2309211A002B2CBD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1FF4860230A5E90002B2CBD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +72,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C125A142230A699A001B2BE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */,
+				C125A147230A88AA001B2BE0 /* ContainedButton .swift */,
+				C125A149230A8967001B2BE0 /* OutLinedButton.swift */,
+				C125A14B230A899D001B2BE0 /* TextButton.swift */,
+				C125A14D230A8AA8001B2BE0 /* UIView.swift */,
+				C125A14F230A8AFD001B2BE0 /* TextField.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C125A152230A9215001B2BE0 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C125A157230A981E001B2BE0 /* DetailTransition.swift */,
+				C125A159230ABEAA001B2BE0 /* DetailInteractor.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
 		C169DA64230692E9001EBE1E = {
 			isa = PBXGroup;
 			children = (
@@ -69,13 +115,16 @@
 		C169DA6F230692E9001EBE1E /* TaimeeLike */ = {
 			isa = PBXGroup;
 			children = (
+				C125A142230A699A001B2BE0 /* Extensions */,
 				C1FF4859230920A9002B2CBD /* Home */,
 				C1FF485A230920B8002B2CBD /* Profile */,
 				C169DA70230692E9001EBE1E /* AppDelegate.swift */,
-				C169DA74230692E9001EBE1E /* Main.storyboard */,
 				C169DA77230692EA001EBE1E /* Assets.xcassets */,
 				C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */,
 				C169DA7C230692EA001EBE1E /* Info.plist */,
+				C125A152230A9215001B2BE0 /* Module */,
+				C125A153230A9663001B2BE0 /* DetailJob.storyboard */,
+				C125A155230A96A2001B2BE0 /* DetailJobController.swift */,
 			);
 			path = TaimeeLike;
 			sourceTree = "<group>";
@@ -83,6 +132,7 @@
 		C1FF4859230920A9002B2CBD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C169DA74230692E9001EBE1E /* Home.storyboard */,
 				C1FF485B2309211A002B2CBD /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -91,6 +141,8 @@
 		C1FF485A230920B8002B2CBD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C1FF4860230A5E90002B2CBD /* Profile.storyboard */,
+				C125A140230A65F9001B2BE0 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -166,7 +218,9 @@
 			files = (
 				C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */,
 				C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */,
-				C169DA76230692E9001EBE1E /* Main.storyboard in Resources */,
+				C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */,
+				C169DA76230692E9001EBE1E /* Home.storyboard in Resources */,
+				C125A154230A9663001B2BE0 /* DetailJob.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,20 +270,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C125A14E230A8AA8001B2BE0 /* UIView.swift in Sources */,
+				C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */,
+				C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */,
+				C125A15A230ABEAA001B2BE0 /* DetailInteractor.swift in Sources */,
+				C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */,
+				C125A156230A96A2001B2BE0 /* DetailJobController.swift in Sources */,
+				C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */,
+				C125A158230A981E001B2BE0 /* DetailTransition.swift in Sources */,
 				C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */,
+				C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */,
 				C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */,
+				C125A14A230A8967001B2BE0 /* OutLinedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C169DA74230692E9001EBE1E /* Main.storyboard */ = {
+		C169DA74230692E9001EBE1E /* Home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C169DA75230692E9001EBE1E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
 		C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */ = {

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0rr-EK-Glw">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Job Controller-->
+        <scene sceneID="ej5-r6-AHz">
+            <objects>
+                <viewController id="eZa-id-pDJ" customClass="DetailJobController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X7O-zC-gjI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mtn-zf-Q7d">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aiE-VX-y5j">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-bh-tJA">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile1" translatesAutoresizingMaskIntoConstraints="NO" id="BhS-1D-MEk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                        <gestureRecognizers/>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rMg-ru-yJb">
+                                                        <rect key="frame" x="8" y="8" width="398" height="4"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="4" id="Z1z-bq-w69"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="BhS-1D-MEk" secondAttribute="bottom" id="M8p-sV-KRS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BhS-1D-MEk" secondAttribute="trailing" id="NGu-iU-lMh"/>
+                                                    <constraint firstItem="BhS-1D-MEk" firstAttribute="top" secondItem="f0a-bh-tJA" secondAttribute="top" id="Sal-QA-PhD"/>
+                                                    <constraint firstItem="BhS-1D-MEk" firstAttribute="leading" secondItem="f0a-bh-tJA" secondAttribute="leading" id="Sgd-KH-UmY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rMg-ru-yJb" secondAttribute="trailing" constant="8" id="UR2-XF-PJd"/>
+                                                    <constraint firstAttribute="height" constant="300" id="llb-if-mZb"/>
+                                                    <constraint firstItem="rMg-ru-yJb" firstAttribute="top" secondItem="f0a-bh-tJA" secondAttribute="top" constant="8" id="pfX-7C-KNq"/>
+                                                    <constraint firstItem="rMg-ru-yJb" firstAttribute="leading" secondItem="f0a-bh-tJA" secondAttribute="leading" constant="8" id="yA9-bY-OlX"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Tw1-1u-jY4" appends="YES" id="SDl-dE-15p"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aiE-VX-y5j" firstAttribute="leading" secondItem="Mtn-zf-Q7d" secondAttribute="leading" id="ISj-jc-t8s"/>
+                                    <constraint firstItem="aiE-VX-y5j" firstAttribute="top" secondItem="Mtn-zf-Q7d" secondAttribute="top" id="J5e-W6-P6m"/>
+                                    <constraint firstItem="aiE-VX-y5j" firstAttribute="width" secondItem="Mtn-zf-Q7d" secondAttribute="width" id="tLa-98-QTO"/>
+                                    <constraint firstAttribute="bottom" secondItem="aiE-VX-y5j" secondAttribute="bottom" id="vpG-IL-HzQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="aiE-VX-y5j" secondAttribute="trailing" id="yrT-ku-hf8"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MYm-S2-YeC" firstAttribute="bottom" secondItem="Mtn-zf-Q7d" secondAttribute="bottom" id="Ep3-Z4-KRN"/>
+                            <constraint firstItem="Mtn-zf-Q7d" firstAttribute="top" secondItem="MYm-S2-YeC" secondAttribute="top" id="XWk-Kq-FAT"/>
+                            <constraint firstItem="Mtn-zf-Q7d" firstAttribute="leading" secondItem="MYm-S2-YeC" secondAttribute="leading" id="lHU-XM-qBV"/>
+                            <constraint firstItem="MYm-S2-YeC" firstAttribute="trailing" secondItem="Mtn-zf-Q7d" secondAttribute="trailing" id="pWF-4f-PX4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MYm-S2-YeC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cFG-4w-9bs"/>
+                    <connections>
+                        <outlet property="barsStackView" destination="rMg-ru-yJb" id="qMh-Te-Svj"/>
+                        <outlet property="shopImage" destination="BhS-1D-MEk" id="8q4-Rj-yuI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pAn-eR-9jy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Tw1-1u-jY4">
+                    <connections>
+                        <action selector="tapGesture:" destination="eZa-id-pDJ" id="jD7-12-DFQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1731.8840579710147" y="125.89285714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dy9-TF-2Lc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0rr-EK-Glw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GLs-qm-P7g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eZa-id-pDJ" kind="relationship" relationship="rootViewController" id="sSB-yv-CEf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMf-m2-5mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="125.89285714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="profile1" width="225" height="225"/>
+    </resources>
+</document>
