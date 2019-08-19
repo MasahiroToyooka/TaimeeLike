@@ -21,51 +21,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ah-lZ-e9u">
                                 <rect key="frame" x="0.0" y="174" width="375" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="293" id="Qkr-ZJ-S5p">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="293"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qkr-ZJ-S5p" id="Cj8-dQ-lzm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="292.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ilO-sE-obx">
-                                                    <rect key="frame" x="10" y="10" width="355" height="272.5"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile1" translatesAutoresizingMaskIntoConstraints="NO" id="awQ-QQ-umU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="140"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="140" id="zPM-dZ-H1s"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstItem="awQ-QQ-umU" firstAttribute="top" secondItem="ilO-sE-obx" secondAttribute="top" id="OXa-sM-rqT"/>
-                                                        <constraint firstAttribute="trailing" secondItem="awQ-QQ-umU" secondAttribute="trailing" id="pWG-uJ-eoJ"/>
-                                                        <constraint firstItem="awQ-QQ-umU" firstAttribute="leading" secondItem="ilO-sE-obx" secondAttribute="leading" id="v9B-cU-4Se"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ilO-sE-obx" secondAttribute="bottom" constant="10" id="8WN-aT-bTH"/>
-                                                <constraint firstItem="ilO-sE-obx" firstAttribute="top" secondItem="Cj8-dQ-lzm" secondAttribute="top" constant="10" id="Oxa-Xo-qFO"/>
-                                                <constraint firstItem="ilO-sE-obx" firstAttribute="leading" secondItem="Cj8-dQ-lzm" secondAttribute="leading" constant="10" id="coI-2r-aJ9"/>
-                                                <constraint firstAttribute="trailing" secondItem="ilO-sE-obx" secondAttribute="trailing" constant="10" id="fYp-tO-2rE"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRaius">
-                                                    <integer key="value" value="50"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ja-3I-f2j">
                                 <rect key="frame" x="0.0" y="64" width="375" height="110"/>
@@ -225,7 +180,6 @@
                     <connections>
                         <outlet property="calendarCollection" destination="p47-Tv-soP" id="9oz-AH-Bwj"/>
                         <outlet property="dateLabel" destination="id7-H4-6Xg" id="Z6v-yR-Vd0"/>
-                        <outlet property="shopImageView" destination="awQ-QQ-umU" id="3YJ-Ny-noM"/>
                         <outlet property="tableView" destination="4ah-lZ-e9u" id="ONu-DM-kBx"/>
                         <outlet property="viewTopConstraint" destination="869-tG-DD9" id="moS-Gq-gvL"/>
                     </connections>
@@ -254,7 +208,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile1" width="225" height="225"/>
         <image name="profile_selected" width="22" height="22"/>
     </resources>
 </document>

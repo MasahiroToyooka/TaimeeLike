@@ -14,8 +14,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
     
     
-    @IBOutlet weak var shopImageView: UIImageView!
-    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -51,6 +49,7 @@ class HomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "JobTableViewCell", bundle: nil), forCellReuseIdentifier: "JobTableViewCell")
     }
     
 
@@ -80,7 +79,7 @@ class HomeViewController: UIViewController {
         
         let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
         
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+        guard let vc = storyBoard.instantiateViewController(withIdentifier: "Profile") as? ProfileViewController else { return }
         
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -103,27 +102,31 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 
-
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let cell = tableView.cellForRow(at: indexPath)
+        let cell = tableView.cellForRow(at: indexPath) as! JobTableViewCell
 
         // タップしたセルよりセル内の画像と表示位置を取得する
-        selectedImage = shopImageView.image
-        selectedFrame = view.convert(shopImageView.frame, from: shopImageView.superview)
+        selectedImage = cell.shopImageView.image
+        selectedFrame = view.convert(cell.shopImageView.frame, from: cell.shopImageView.superview)
+        
+        let storyboard = UIStoryboard(name: "DetailJob", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetailJobController") as! DetailJobController
+
+        // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .white
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JobTableViewCell", for: indexPath) as! JobTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
         return cell
     }
     
@@ -132,10 +135,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-
-
-
+//extension HomeViewController: UIViewControllerTransitioningDelegate {
+//
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//
+//
+//    }
+//
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        <#code#>
+//    }
+//}
 
 
 // MARK: - UINavigationControllerDelegate

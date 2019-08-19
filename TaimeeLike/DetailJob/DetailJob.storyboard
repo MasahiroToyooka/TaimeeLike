@@ -13,7 +13,7 @@
         <!--Detail Job Controller-->
         <scene sceneID="ej5-r6-AHz">
             <objects>
-                <viewController id="eZa-id-pDJ" customClass="DetailJobController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailJobController" id="eZa-id-pDJ" customClass="DetailJobController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X7O-zC-gjI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
