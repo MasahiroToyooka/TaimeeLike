@@ -14,7 +14,8 @@ class DetailJobController: UIViewController {
     
     var imageViews: [UIImage] = [#imageLiteral(resourceName: "profile1"), #imageLiteral(resourceName: "profile3"), #imageLiteral(resourceName: "profile2"), #imageLiteral(resourceName: "profile6")]
     
-    // 一番上のお店についての画像
+ 
+    // お店についての画像
     @IBOutlet weak var shopImage: UIImageView!
     
     @IBOutlet weak var barsStackView: UIStackView!

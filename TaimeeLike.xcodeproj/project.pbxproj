@@ -20,7 +20,9 @@
 		C125A15A230ABEAA001B2BE0 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A159230ABEAA001B2BE0 /* DetailInteractor.swift */; };
 		C155B38E230ACB9300B10988 /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B38C230ACB9300B10988 /* JobTableViewCell.swift */; };
 		C155B38F230ACB9300B10988 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C155B38D230ACB9300B10988 /* JobTableViewCell.xib */; };
-		C155B393230ADDD900B10988 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B392230ADDD900B10988 /* ShopModel.swift */; };
+		C155B398230BBD4C00B10988 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B397230BBD4C00B10988 /* CellModel.swift */; };
+		C155B39A230BBD7000B10988 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B399230BBD7000B10988 /* Models.swift */; };
+		C155B39C230C0D3E00B10988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */; };
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
 		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
@@ -46,7 +48,9 @@
 		C125A159230ABEAA001B2BE0 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		C155B38C230ACB9300B10988 /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		C155B38D230ACB9300B10988 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
-		C155B392230ADDD900B10988 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		C155B397230BBD4C00B10988 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		C155B399230BBD7000B10988 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -112,9 +116,17 @@
 		C155B391230ADDC000B10988 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C155B392230ADDD900B10988 /* ShopModel.swift */,
+				C155B399230BBD7000B10988 /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C155B396230BBD2900B10988 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C155B397230BBD4C00B10988 /* CellModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C169DA64230692E9001EBE1E = {
@@ -138,7 +150,9 @@
 		C169DA6F230692E9001EBE1E /* TaimeeLike */ = {
 			isa = PBXGroup;
 			children = (
+				C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */,
 				C155B391230ADDC000B10988 /* Model */,
+				C155B396230BBD2900B10988 /* ViewModels */,
 				C125A142230A699A001B2BE0 /* Extensions */,
 				C1FF4859230920A9002B2CBD /* Home */,
 				C1FF485A230920B8002B2CBD /* Profile */,
@@ -193,6 +207,7 @@
 				C169DA6A230692E9001EBE1E /* Frameworks */,
 				C169DA6B230692E9001EBE1E /* Resources */,
 				6161F211D75DFECD0E8FBB5D /* [CP] Embed Pods Frameworks */,
+				6637E9A6C42A24223222AE89 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,6 +262,7 @@
 				C169DA76230692E9001EBE1E /* Home.storyboard in Resources */,
 				C125A154230A9663001B2BE0 /* DetailJob.storyboard in Resources */,
 				C155B38F230ACB9300B10988 /* JobTableViewCell.xib in Resources */,
+				C155B39C230C0D3E00B10988 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,15 +276,61 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6637E9A6C42A24223222AE89 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseEmailAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseEmailAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BB8139BCAEBA8E9EA354C661 /* [CP] Check Pods Manifest.lock */ = {
@@ -300,10 +362,11 @@
 				C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */,
 				C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */,
 				C125A15A230ABEAA001B2BE0 /* DetailInteractor.swift in Sources */,
+				C155B39A230BBD7000B10988 /* Models.swift in Sources */,
 				C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */,
 				C125A156230A96A2001B2BE0 /* DetailJobController.swift in Sources */,
 				C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */,
-				C155B393230ADDD900B10988 /* ShopModel.swift in Sources */,
+				C155B398230BBD4C00B10988 /* CellModel.swift in Sources */,
 				C155B38E230ACB9300B10988 /* JobTableViewCell.swift in Sources */,
 				C125A158230A981E001B2BE0 /* DetailTransition.swift in Sources */,
 				C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */,

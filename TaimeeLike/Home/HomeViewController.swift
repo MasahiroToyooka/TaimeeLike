@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import SDWebImage
 
 class HomeViewController: UIViewController {
     
     // 日付とかのまとめて貼ってあるビュー
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
-    
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -33,11 +34,7 @@ class HomeViewController: UIViewController {
     // カスタムトランジション側のクラスに引き渡す画像の情報とセルの位置情報
     private var selectedFrame: CGRect?
     private var selectedImage: UIImage?
-//    let now = Date()
-//    var cal = Calendar.current
-//    let dateFormatter = DateFormatter()
-//    var components = DateComponents()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +70,6 @@ class HomeViewController: UIViewController {
         pastDistance =  scrollView.contentOffset.y
     }
     
-    
-    
     @IBAction func showProfile(_ sender: UIButton) {
         
         let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
@@ -84,6 +79,7 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
 }
+
 
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -97,10 +93,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.backgroundColor = .yellow
         return cell
     }
-    
-    
 }
 
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -134,18 +130,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 300
     }
 }
-
-//extension HomeViewController: UIViewControllerTransitioningDelegate {
-//
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//
-//
-//    }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        <#code#>
-//    }
-//}
 
 
 // MARK: - UINavigationControllerDelegate

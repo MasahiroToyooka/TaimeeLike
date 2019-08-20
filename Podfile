@@ -6,5 +6,14 @@ target 'TaimeeLike' do
   use_frameworks!
 
   # Pods for TaimeeLike
- pod 'SwiftMessages'
+  pod 'SwiftMessages'
+  pod 'SDWebImage'
+  pod 'Firebase/Core'
+  pod 'FirebaseUI/Auth', '~> 8.0'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Email'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+  pod 'FSCalendar'
+
 end
