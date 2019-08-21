@@ -8,12 +8,24 @@
 
 import UIKit
 
-class DetailJobController: UIViewController {
+class DetailTicketController: UIViewController {
+    
+    // 遷移元でこれを呼び出す
+    static func fromStoryboard(_ storyboard: UIStoryboard = UIStoryboard(name: "DetailTicketController", bundle: nil), forTicket ticket: Ticket) -> DetailTicketController {
+        
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetailTicketController") as! DetailTicketController
+        controller.ticket = ticket
+        return controller
+    }
+    
+    // 遷移せれるときにデータを受け取る用の変数
+    private var ticket: Ticket!
+    
+    
     
     var imageCount = 4
     
     var imageViews: [UIImage] = [#imageLiteral(resourceName: "profile1"), #imageLiteral(resourceName: "profile3"), #imageLiteral(resourceName: "profile2"), #imageLiteral(resourceName: "profile6")]
-    
  
     // お店についての画像
     @IBOutlet weak var shopImage: UIImageView!

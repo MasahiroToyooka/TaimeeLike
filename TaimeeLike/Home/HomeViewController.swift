@@ -9,21 +9,17 @@
 import UIKit
 import FirebaseFirestore
 import SDWebImage
+import FSCalendar
 
 class HomeViewController: UIViewController {
     
     // 日付とかのまとめて貼ってあるビュー
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
     
-    
     @IBOutlet weak var tableView: UITableView!
     
-    // カレンダー用のコレクションビュー
-    @IBOutlet weak var calendarCollection: UICollectionView!
-    
-    // 日付のらラベル
-    @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var calendarView: FSCalendar!
+
     // 過去にスクロールdされた合計のオフセット
     var pastDistance: CGFloat = 0
     
@@ -35,18 +31,81 @@ class HomeViewController: UIViewController {
     private var selectedFrame: CGRect?
     private var selectedImage: UIImage?
 
+    var ticketData: [Ticket] = []
+    var ticketListener: ListenerRegistration?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.bounces = false
+        setupCalendar()
         
-        calendarCollection.delegate = self
-        calendarCollection.dataSource = self
+        tableView.bounces = false
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "JobTableViewCell", bundle: nil), forCellReuseIdentifier: "JobTableViewCell")
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        stopListeningForTickets()
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        stopListeningForTickets()
+//    }
+    
+    func startListeningForTickets() {
+        
+        let basicQuery = Firestore.firestore().collection("tickets").limit(to: 20)
+        
+        ticketListener = basicQuery.addSnapshotListener({ (snapshot, error) in
+            if let error = error {
+                print("ホームビューコントローラーにてチケットのデータ取得失敗: ", error)
+                return
+            }
+            guard let snapshot = snapshot else { return }
+            self.ticketData = []
+            
+            for ticketDocument in snapshot.documents {
+                if let newTicket = Ticket(document: ticketDocument) {
+                    self.ticketData.append(newTicket)
+                }
+            }
+            self.tableView.reloadData()
+        })
+    }
+    
+    private func stopListeningForTickets() {
+        ticketListener?.remove()
+        ticketListener = nil
+    }
+    
+    
+    
+    
+    
+    func setupCalendar() {
+        calendarView.scope = .week
+        calendarView.rowHeight = 100
+        
+        let weekDayLabel = self.calendarView.calendarWeekdayView.weekdayLabels
+        weekDayLabel[0].text = "日"
+        weekDayLabel[0].textColor = .red
+        weekDayLabel[1].text = "月"
+        weekDayLabel[1].textColor = .black
+        weekDayLabel[2].text = "火"
+        weekDayLabel[2].textColor = .black
+        weekDayLabel[3].text = "水"
+        weekDayLabel[3].textColor = .black
+        weekDayLabel[4].text = "木"
+        weekDayLabel[4].textColor = .black
+        weekDayLabel[5].text = "金"
+        weekDayLabel[5].textColor = .black
+        weekDayLabel[6].text = "土"
+        weekDayLabel[6].textColor = .blue
     }
     
 
@@ -81,21 +140,6 @@ class HomeViewController: UIViewController {
 }
 
 
-
-// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-        cell.backgroundColor = .yellow
-        return cell
-    }
-}
-
-
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -109,7 +153,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         selectedFrame = view.convert(cell.shopImageView.frame, from: cell.shopImageView.superview)
         
         let storyboard = UIStoryboard(name: "DetailJob", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "DetailJobController") as! DetailJobController
+        let controller = storyboard.instantiateViewController(withIdentifier: "DetailTicketController") as! DetailTicketController
 
         // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
         self.navigationController?.pushViewController(controller, animated: true)
