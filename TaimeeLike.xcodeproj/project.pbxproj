@@ -22,7 +22,6 @@
 		C155B38F230ACB9300B10988 /* JobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C155B38D230ACB9300B10988 /* JobTableViewCell.xib */; };
 		C155B398230BBD4C00B10988 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B397230BBD4C00B10988 /* CellModel.swift */; };
 		C155B39A230BBD7000B10988 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B399230BBD7000B10988 /* User.swift */; };
-		C155B39C230C0D3E00B10988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */; };
 		C155B3A0230D59D400B10988 /* ShopLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B39F230D59D400B10988 /* ShopLoginViewController.swift */; };
 		C155B3A3230D5A1F00B10988 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3A2230D5A1F00B10988 /* Login.storyboard */; };
 		C155B3A7230D660400B10988 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3A6230D660400B10988 /* PostViewController.swift */; };
@@ -30,6 +29,9 @@
 		C155B3AB230D892C00B10988 /* Firestore + Populate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3AA230D892C00B10988 /* Firestore + Populate.swift */; };
 		C155B3AD230DB97600B10988 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3AC230DB97600B10988 /* Shop.swift */; };
 		C155B3AF230DB9CC00B10988 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3AE230DB9CC00B10988 /* Ticket.swift */; };
+		C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C155B3B0230E511A00B10988 /* GoogleService-Info.plist */; };
+		C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3B4230E76B200B10988 /* UserLogin.storyboard */; };
+		C155B3B7230E974900B10988 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3B6230E974900B10988 /* UserLoginViewController.swift */; };
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
 		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
@@ -57,7 +59,6 @@
 		C155B38D230ACB9300B10988 /* JobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobTableViewCell.xib; sourceTree = "<group>"; };
 		C155B397230BBD4C00B10988 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		C155B399230BBD7000B10988 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C155B39F230D59D400B10988 /* ShopLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopLoginViewController.swift; sourceTree = "<group>"; };
 		C155B3A2230D5A1F00B10988 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C155B3A6230D660400B10988 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		C155B3AA230D892C00B10988 /* Firestore + Populate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore + Populate.swift"; sourceTree = "<group>"; };
 		C155B3AC230DB97600B10988 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		C155B3AE230DB9CC00B10988 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		C155B3B0230E511A00B10988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C155B3B4230E76B200B10988 /* UserLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		C155B3B6230E974900B10988 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -173,6 +177,26 @@
 			path = Post;
 			sourceTree = "<group>";
 		};
+		C155B3B2230E764600B10988 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C155B3B3230E768A00B10988 /* Login */,
+				C1FF485A230920B8002B2CBD /* Profile */,
+				C155B390230AD79200B10988 /* DetailTicket */,
+				C1FF4859230920A9002B2CBD /* Home */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		C155B3B3230E768A00B10988 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C155B3B4230E76B200B10988 /* UserLogin.storyboard */,
+				C155B3B6230E974900B10988 /* UserLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		C169DA64230692E9001EBE1E = {
 			isa = PBXGroup;
 			children = (
@@ -194,15 +218,13 @@
 		C169DA6F230692E9001EBE1E /* TaimeeLike */ = {
 			isa = PBXGroup;
 			children = (
-				C155B39B230C0D3E00B10988 /* GoogleService-Info.plist */,
-				C155B391230ADDC000B10988 /* Model */,
-				C155B396230BBD2900B10988 /* ViewModels */,
-				C1FF4859230920A9002B2CBD /* Home */,
-				C155B390230AD79200B10988 /* DetailTicket */,
-				C1FF485A230920B8002B2CBD /* Profile */,
+				C155B3B0230E511A00B10988 /* GoogleService-Info.plist */,
+				C155B3B2230E764600B10988 /* User */,
 				C155B3A4230D5FF400B10988 /* Shop */,
+				C155B391230ADDC000B10988 /* Model */,
 				C125A152230A9215001B2BE0 /* Module */,
 				C125A142230A699A001B2BE0 /* Extensions */,
+				C155B396230BBD2900B10988 /* ViewModels */,
 				C169DA70230692E9001EBE1E /* AppDelegate.swift */,
 				C169DA77230692EA001EBE1E /* Assets.xcassets */,
 				C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */,
@@ -301,6 +323,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */,
+				C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */,
 				C155B3A3230D5A1F00B10988 /* Login.storyboard in Resources */,
 				C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */,
 				C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */,
@@ -309,7 +333,6 @@
 				C169DA76230692E9001EBE1E /* Home.storyboard in Resources */,
 				C125A154230A9663001B2BE0 /* DetailJob.storyboard in Resources */,
 				C155B38F230ACB9300B10988 /* JobTableViewCell.xib in Resources */,
-				C155B39C230C0D3E00B10988 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C155B3B7230E974900B10988 /* UserLoginViewController.swift in Sources */,
 				C125A14E230A8AA8001B2BE0 /* UIView.swift in Sources */,
 				C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */,
 				C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */,

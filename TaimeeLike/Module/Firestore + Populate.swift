@@ -75,22 +75,3 @@ extension WriteBatch {
         self.setData(user.documentData, forDocument: document)
     }
 }
-
-
-
-extension Firestore {
-    
-    func sampleData() -> (shops: [Shop], ticket: [Ticket]) {
-        
-        let shopCount = 16
-        let ticketCount = 10
-       
-        let shops: [Shop] = (0..<shopCount).map { (num) in
-            let shopID = UUID().uuidString
-            let shopName = Shop.shopName[num]
-            let address = Shop.address[num]
-            return Shop(shopName: shopName, address: address, shopID: shopID)
-        }
-        
-    }
-}

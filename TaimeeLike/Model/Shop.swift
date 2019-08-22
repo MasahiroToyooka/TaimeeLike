@@ -35,7 +35,7 @@ extension Shop: DocumentSerializable {
         self.init(dictionary: dictionary)
     }
     
-    public init?(dictionary: [String: Any]) {
+    init?(dictionary: [String: Any]) {
         guard let shopName = dictionary["shopName"] as? String,
             let shopID = dictionary["shopID"] as? String,
             let address = dictionary["address"] as? String else { return nil}

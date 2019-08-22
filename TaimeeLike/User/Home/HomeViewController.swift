@@ -10,8 +10,11 @@ import UIKit
 import FirebaseFirestore
 import SDWebImage
 import FSCalendar
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
+    
+    let db = Firestore.firestore()
     
     // 日付とかのまとめて貼ってあるビュー
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
@@ -34,13 +37,18 @@ class HomeViewController: UIViewController {
     var ticketData: [Ticket] = []
     var ticketListener: ListenerRegistration?
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkCurrentUser()
+        
         
         setupCalendar()
         
         tableView.bounces = false
+
+//        sampleDB()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -56,6 +64,35 @@ class HomeViewController: UIViewController {
 //        super.viewWillDisappear(animated)
 //        stopListeningForTickets()
 //    }
+    
+    func checkCurrentUser() {
+        if Auth.auth().currentUser == nil {
+            
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! UserLoginViewController
+                
+                self.present(vc, animated: true)
+            }
+        }
+        print(Auth.auth().currentUser?.uid)
+    }
+    
+    func sampleDB() {
+        
+        let shopNum = 3
+        
+        for i in 0..<shopNum {
+            
+            let shop = Shop(shopName: Shop.shopName[i], address: Shop.address[i], shopID: UUID().uuidString)
+            db.add(shop: shop)
+
+            let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
+            
+            let ticket = Ticket(date: Date(), shopName: shop.shopName, shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+            db.add(ticket: ticket)
+        }
+    }
     
     func startListeningForTickets() {
         
@@ -85,12 +122,13 @@ class HomeViewController: UIViewController {
     
     
     
-    
-    
     func setupCalendar() {
         calendarView.scope = .week
-        calendarView.rowHeight = 100
-        
+//        calendarView.collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
+
+
+
+
         let weekDayLabel = self.calendarView.calendarWeekdayView.weekdayLabels
         weekDayLabel[0].text = "日"
         weekDayLabel[0].textColor = .red
@@ -139,6 +177,10 @@ class HomeViewController: UIViewController {
     }
 }
 
+//extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
+//
+//
+//}
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
@@ -171,7 +213,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 200
     }
 }
 
