@@ -15,6 +15,7 @@ struct Shop {
     
     var shopName: String
     //    var images: [UIImage]?
+    var issueTicket: [[String: Any]]?
     var address: String
     var shopID : String
 }
@@ -38,10 +39,11 @@ extension Shop: DocumentSerializable {
     init?(dictionary: [String: Any]) {
         guard let shopName = dictionary["shopName"] as? String,
             let shopID = dictionary["shopID"] as? String,
-            let address = dictionary["address"] as? String else { return nil}
+            let address = dictionary["address"] as? String,
+            let issueTicket = dictionary["issueTicket"] as? [[String: Any]] else { return nil}
         
         
-        self.init(shopName: shopName, address: address, shopID: shopID)
+        self.init(shopName: shopName, issueTicket: issueTicket, address: address, shopID: shopID)
     }
     
     
@@ -52,12 +54,6 @@ extension Shop: DocumentSerializable {
     init?(document: DocumentSnapshot) {
         guard let data = document.data() else { return nil}
         self.init(documentID: document.documentID, dictionary: data)
-    }
-    
-    
-    /// Firebaseユーザーオブジェクトから新しいユーザーを初期化します。
-    public init(shop: FirebaseAuth.UserInfo) {
-        self.init(shopName: shop.displayName ?? "", address: shop.description, shopID: shop.uid)
     }
     
     //    ///新しいユーザーを返します。nilが渡された場合、または指定されていない場合、デフォルト名とphotoURLを提供します。

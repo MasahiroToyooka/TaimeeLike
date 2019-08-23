@@ -55,15 +55,15 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "JobTableViewCell", bundle: nil), forCellReuseIdentifier: "JobTableViewCell")
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        stopListeningForTickets()
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        stopListeningForTickets()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startListeningForTickets()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopListeningForTickets()
+    }
     
     func checkCurrentUser() {
         if Auth.auth().currentUser == nil {
@@ -112,6 +112,7 @@ class HomeViewController: UIViewController {
                 }
             }
             self.tableView.reloadData()
+            print(self.ticketData.count)
         })
     }
     

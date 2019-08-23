@@ -21,9 +21,11 @@ struct User {
     
     var userID: String
     var name: String
-    var birthDay: Date?
-    var address: String?
-    var phoneNumber: Int?
+    var birthDay: Date
+    var address: String
+    var phoneNumber: Int
+    var haveTicket: [[String: Any]]?
+    var ticketPlan: [[String: Any]]?
 }
 
 extension User: DocumentSerializable {
@@ -40,7 +42,7 @@ extension User: DocumentSerializable {
         //これは、セキュリティルールを使用してサーバーで確認する必要があるものです。
         //一貫性のあるデータベースを維持するには、すべてのユーザーを最上位に保存する必要があります
         //ユーザーIDによるユーザーコレクション。 一部のクエリは、この一貫性に依存しています。
-        precondition(userID == userID)
+        precondition(userID == documentID)
         
         self.init(dictionary: dictionary)
     }
@@ -49,21 +51,23 @@ extension User: DocumentSerializable {
     /// Firestoreで。 他のデータタイプとは異なり、ユーザーはFirestoreに依存しません。
     ///一意の識別子が無料で付属しているため、一意の識別子を生成します。
     public init?(dictionary: [String: Any]) {
+        
         guard let userID = dictionary["userID"] as? String,
             let name = dictionary["name"] as? String,
             let birthDay = dictionary["birthDay"] as? Date,
             let address = dictionary["address"] as? String,
-            let phoneNumber = dictionary["phoneNumber"] as? Int else { return nil }
-        
+            let phoneNumber = dictionary["phoneNumber"] as? Int,
+            let haveTicket = dictionary["haveTicket"] as? [[String: Any]],
+            let ticketPlan = dictionary["ticketPlan"] as? [[String: Any]] else { return nil }
    
-        self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber)
+        self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber, haveTicket: haveTicket, ticketPlan: ticketPlan)
     }
     
-    init?(document: QueryDocumentSnapshot) {
+    public init?(document: QueryDocumentSnapshot) {
         self.init(documentID: document.documentID, dictionary: document.data())
     }
     
-    init?(document: DocumentSnapshot) {
+    public init?(document: DocumentSnapshot) {
         guard let data = document.data() else { return nil }
         self.init(documentID: document.documentID, dictionary: data)
     }
@@ -74,7 +78,9 @@ extension User: DocumentSerializable {
             "name": name,
             "birthDay": birthDay,
             "address": address,
-            "phoneNumber": phoneNumber
+            "phoneNumber": phoneNumber,
+            "haveTicket": haveTicket,
+            "ticketPlan": ticketPlan
         ]
     }
 }
