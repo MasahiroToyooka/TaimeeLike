@@ -7,24 +7,51 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 class PostViewController: UIViewController {
 
+    @IBOutlet weak var startTime: UIDatePicker!
+    
+    @IBOutlet weak var endTime: UIDatePicker!
+    
+    @IBOutlet weak var text: UITextField!
+    
+    @IBOutlet weak var detailtext: UITextField!
+    
+    @IBOutlet weak var priceText: UITextField!
+    
+    
+    
+    let db = Firestore.firestore()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func PostButton(_ sender: UIButton) {
+        guard let startTime: Date = startTime.date, let endDate: Date = endTime.date, let text = text.text, let detailText = detailtext.text, let price = priceText.text else {
+            return
+        }
+//        let document = db.shops.document("32455259-E1D6-4B1D-9311-BA4EA4C53368")
+        
+//        let ownerID = Auth.auth().currentUser?.uid
+//
+//        let shopDocument = db.shops.document("\(ownerID)")
+//
+//        let shop = Shop(document: shopDocument)
+//
+//        let dictionary: [String: Any] = [
+//            "shopName": shop?.shopName, "issueTicket": ]
+//
+//        let ticket = Ticket(startDate: startTime, endDate: endDate, shopInfo: <#T##[String : Any]#>, price: <#T##String#>, text: <#T##String#>, detailText: <#T##String#>, imageUrls: <#T##[String]?#>, documentID: <#T##String#>)
+        
+        
     }
-    */
-
 }

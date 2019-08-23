@@ -74,8 +74,9 @@ class HomeViewController: UIViewController {
                 
                 self.present(vc, animated: true)
             }
+        } else {
+            print(Auth.auth().currentUser!.uid)
         }
-        print(Auth.auth().currentUser?.uid)
     }
     
     func sampleDB() {
@@ -84,12 +85,12 @@ class HomeViewController: UIViewController {
         
         for i in 0..<shopNum {
             
-            let shop = Shop(shopName: Shop.shopName[i], address: Shop.address[i], shopID: UUID().uuidString)
+            let shop = Shop(shopName: Shop.shopName[i], issueTicket: nil, address: Shop.address[i], shopID: UUID().uuidString)
             db.add(shop: shop)
 
             let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
             
-            let ticket = Ticket(date: Date(), shopName: shop.shopName, shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
             db.add(ticket: ticket)
         }
     }

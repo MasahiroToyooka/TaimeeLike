@@ -32,6 +32,10 @@
 		C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C155B3B0230E511A00B10988 /* GoogleService-Info.plist */; };
 		C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3B4230E76B200B10988 /* UserLogin.storyboard */; };
 		C155B3B7230E974900B10988 /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3B6230E974900B10988 /* UserLoginViewController.swift */; };
+		C155B3BB230F7CC400B10988 /* Ticket.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3BA230F7CC400B10988 /* Ticket.storyboard */; };
+		C155B3BD230F7CF200B10988 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3BC230F7CF200B10988 /* TicketViewController.swift */; };
+		C155B3C0230F7E7000B10988 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3BF230F7E7000B10988 /* EditProfile.storyboard */; };
+		C155B3C2230F7E9100B10988 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */; };
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
 		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
@@ -69,6 +73,10 @@
 		C155B3B0230E511A00B10988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C155B3B4230E76B200B10988 /* UserLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		C155B3B6230E974900B10988 /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		C155B3BA230F7CC400B10988 /* Ticket.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ticket.storyboard; sourceTree = "<group>"; };
+		C155B3BC230F7CF200B10988 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		C155B3BF230F7E7000B10988 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -171,8 +179,8 @@
 		C155B3A5230D600600B10988 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				C155B3A6230D660400B10988 /* PostViewController.swift */,
 				C155B3A8230D663300B10988 /* Post.storyboard */,
+				C155B3A6230D660400B10988 /* PostViewController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -181,9 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				C155B3B3230E768A00B10988 /* Login */,
-				C1FF485A230920B8002B2CBD /* Profile */,
-				C155B390230AD79200B10988 /* DetailTicket */,
 				C1FF4859230920A9002B2CBD /* Home */,
+				C155B3B9230F7B7700B10988 /* Ticket */,
+				C1FF485A230920B8002B2CBD /* Profile */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -195,6 +203,24 @@
 				C155B3B6230E974900B10988 /* UserLoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		C155B3B9230F7B7700B10988 /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				C155B3BA230F7CC400B10988 /* Ticket.storyboard */,
+				C155B3BC230F7CF200B10988 /* TicketViewController.swift */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		C155B3BE230F7DE400B10988 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C155B3BF230F7E7000B10988 /* EditProfile.storyboard */,
+				C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		C169DA64230692E9001EBE1E = {
@@ -236,6 +262,7 @@
 		C1FF4859230920A9002B2CBD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C155B390230AD79200B10988 /* DetailTicket */,
 				C169DA74230692E9001EBE1E /* Home.storyboard */,
 				C1FF485B2309211A002B2CBD /* HomeViewController.swift */,
 				C155B38D230ACB9300B10988 /* JobTableViewCell.xib */,
@@ -247,6 +274,7 @@
 		C1FF485A230920B8002B2CBD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				C155B3BE230F7DE400B10988 /* EditProfile */,
 				C1FF4860230A5E90002B2CBD /* Profile.storyboard */,
 				C125A140230A65F9001B2BE0 /* ProfileViewController.swift */,
 			);
@@ -323,10 +351,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C155B3C0230F7E7000B10988 /* EditProfile.storyboard in Resources */,
 				C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */,
 				C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */,
 				C155B3A3230D5A1F00B10988 /* Login.storyboard in Resources */,
 				C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */,
+				C155B3BB230F7CC400B10988 /* Ticket.storyboard in Resources */,
 				C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */,
 				C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */,
 				C155B3A9230D663300B10988 /* Post.storyboard in Resources */,
@@ -438,10 +468,12 @@
 				C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */,
 				C155B3AF230DB9CC00B10988 /* Ticket.swift in Sources */,
 				C125A156230A96A2001B2BE0 /* DetailTicketController.swift in Sources */,
+				C155B3C2230F7E9100B10988 /* EditProfileViewController.swift in Sources */,
 				C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */,
 				C155B398230BBD4C00B10988 /* CellModel.swift in Sources */,
 				C155B38E230ACB9300B10988 /* JobTableViewCell.swift in Sources */,
 				C125A158230A981E001B2BE0 /* DetailTransition.swift in Sources */,
+				C155B3BD230F7CF200B10988 /* TicketViewController.swift in Sources */,
 				C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */,
 				C155B3A0230D59D400B10988 /* ShopLoginViewController.swift in Sources */,
 				C155B3AD230DB97600B10988 /* Shop.swift in Sources */,

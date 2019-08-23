@@ -13,12 +13,15 @@ import FirebaseAuth
 
 struct Ticket {
     
-    var date: Date
-    var shopName: String
+    var startDate: Date
+    var endDate: Date
     var shopInfo: [String: Any]
     var price: String
     var text: String
     var detailText: String
+    
+    /// userがチケットを使ったらfalseにするやつ
+    var isEnabled: Bool
     var imageUrls: [String]?
     var documentID: String
 }
@@ -28,19 +31,21 @@ extension Ticket: DocumentSerializable {
     
     public init?(dictionary: [String: Any]) {
         
-        guard let text = dictionary["text"] as? String,
-            let detailText = dictionary["detailText"] as? String,
-            let date = dictionary["date"] as? Date,
-            let imageUrls = dictionary["imageUrls"] as? [String],
+        guard   let startDate = dictionary["startDate"] as? Date,
+            let endDate = dictionary["endDate"] as? Date,
+            let shopInfo = dictionary["shopInfo"] as? [String: Any],
             let price = dictionary["price"] as? String,
-            let shopName = dictionary["shopName"] as? String,
-            let documentID = dictionary["documentID"] as? String,
-            let shopInfo = dictionary["shopInfo"] as? [String: Any] else {
+            let text = dictionary["text"] as? String,
+            let detailText = dictionary["detailText"] as? String,
+            let isEnabeled = dictionary["isEnabled"] as? Bool,
+            let imageUrls = dictionary["imageUrls"] as? [String],
+        
+            let documentID = dictionary["documentID"] as? String else {
                 return nil
         }
     
         
-        self.init(date: date, shopName: shopName, shopInfo: shopInfo, price: price, text: text, detailText: detailText, imageUrls: imageUrls, documentID: documentID)
+        self.init(startDate: startDate, endDate: endDate, shopInfo: shopInfo, price: price, text: text, detailText: detailText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
     }
     
     
@@ -55,11 +60,12 @@ extension Ticket: DocumentSerializable {
     
     var documentData: [String : Any] {
         return [
-            "ticketID": documentID,
-            "shopName": shopName,
+            "documentID": documentID,
             "shopInfo": shopInfo,
             "price": price,
-            "date": date,
+            "isEnabled": isEnabled,
+            "startDate": startDate,
+            "endDate": endDate,
             "imageUrls": imageUrls ?? "",
             "text": text,
             "detailText": detailText

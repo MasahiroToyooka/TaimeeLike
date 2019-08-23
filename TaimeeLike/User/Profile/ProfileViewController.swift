@@ -16,4 +16,7 @@ class ProfileViewController: UIViewController {
     }
     
     
+    @IBAction func editProfile(_ sender: UIButton) {
+        
+    }
 }
