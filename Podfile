@@ -15,5 +15,5 @@ target 'TaimeeLike' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FSCalendar'
-
+  pod 'FSPagerView'
 end

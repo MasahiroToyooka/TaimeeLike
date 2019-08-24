@@ -69,7 +69,6 @@
         <!--Navigation Controller-->
         <scene sceneID="sfL-tM-p4a">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XXu-PG-UMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E5N-fa-nKi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i0L-VB-JqR">
@@ -81,13 +80,13 @@
                         <segue destination="2OK-P1-WaU" kind="relationship" relationship="rootViewController" id="afj-v8-ke5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXu-PG-UMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="572" y="-228.03598200899552"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dlL-oG-8ub">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MmD-9j-ow6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2OK-P1-WaU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="QHl-Ab-3RE"/>
@@ -102,16 +101,17 @@
                         <segue destination="ljI-iO-LmJ" kind="relationship" relationship="viewControllers" id="LX4-qe-wxP"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmD-9j-ow6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328.8" y="-228.03598200899552"/>
         </scene>
         <!--Ticket-->
         <scene sceneID="MRM-J7-E2H">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1L-yg-zCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Ticket" storyboardName="Ticket" id="AMC-i3-iTe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="チケット" image="gear" selectedImage="gear" id="0uL-WO-F2L"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1L-yg-zCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1515" y="453"/>
         </scene>
@@ -119,7 +119,7 @@
         <scene sceneID="PEt-Ck-6HZ">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Profile" id="ljI-iO-LmJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="プロフィール" id="Jgc-Ah-l9r"/>
+                    <tabBarItem key="tabBarItem" title="プロフィール" image="gear" id="Jgc-Ah-l9r"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-Eg-lxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

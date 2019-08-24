@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
+import FSPagerView
 
-class DetailTicketController: UIViewController {
+class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
+
     
     // 遷移元でこれを呼び出す
     static func fromStoryboard(_ storyboard: UIStoryboard = UIStoryboard(name: "DetailJob", bundle: nil), forTicket ticket: Ticket) -> DetailTicketController {
@@ -22,43 +25,47 @@ class DetailTicketController: UIViewController {
     private var ticket: Ticket!
     
     
-//    var imageCount = 4
-    
-    var imageViews: [UIImage] = [#imageLiteral(resourceName: "profile1"), #imageLiteral(resourceName: "profile3"), #imageLiteral(resourceName: "profile2"), #imageLiteral(resourceName: "profile6")]
- 
     // お店についての画像
-    @IBOutlet weak var shopImage: UIImageView!
+    @IBOutlet weak var pagerView: FSPagerView! {
+        didSet {
+            pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.pagerView.itemSize = FSPagerView.automaticSize
+        }
+    }
     
-    @IBOutlet weak var barsStackView: UIStackView!
+    @IBOutlet weak var pageControl: FSPageControl! {
+        didSet {
+            self.pageControl.numberOfPages = self.ticket.imageUrls?.count ?? 0
+            self.pageControl.contentHorizontalAlignment = .center
+            self.pageControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        shopImage.image = #imageLiteral(resourceName: "profile1")
-//
-//        (0..<imageCount).forEach { (_) in
-//
-//            let barView = UIView()
-//            barView.backgroundColor = UIColor(white: 0, alpha: 0.1)
-//
-//            barsStackView.addArrangedSubview(barView)
-//        }
+        
+            pagerView.delegate = self
+            pagerView.dataSource = self
+    }
+
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.pageControl.currentPage = targetIndex
     }
     
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pageControl.currentPage = pagerView.currentIndex
+    }
     
-//    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
-//
-//        let tapLocation = sender.location(in: nil)
-//        let shouldAdvanceNextPhoto = tapLocation.x > shopImage.frame.width / 2 ? true : false
-//
-//        if shouldAdvanceNextPhoto {
-//
-//            print("次の画像へ")
-//
-//
-//        } else {
-//            print("前の画像へ")
-//        }
-//
-//    }
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return ticket.imageUrls?.count ?? 0
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.sd_setImage(with: URL(string: ticket.imageUrls?[index] ?? ""), completed: nil)
+        return cell
+    }
 }
