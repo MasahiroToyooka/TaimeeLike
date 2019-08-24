@@ -13,7 +13,7 @@
         <!--マイページ-->
         <scene sceneID="SAL-GS-YX9">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="YeO-aM-Jdk" customClass="ProfileViewController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile" id="YeO-aM-Jdk" customClass="ProfileViewController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6P6-DC-WLs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

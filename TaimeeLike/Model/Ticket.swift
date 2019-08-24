@@ -30,22 +30,21 @@ struct Ticket {
 extension Ticket: DocumentSerializable {
     
     public init?(dictionary: [String: Any]) {
-        
-        guard   let startDate = dictionary["startDate"] as? Date,
-            let endDate = dictionary["endDate"] as? Date,
+
+        guard let startDate = dictionary["startDate"] as? Timestamp,
+            let endDate = dictionary["endDate"] as? Timestamp,
             let shopInfo = dictionary["shopInfo"] as? [String: Any],
             let price = dictionary["price"] as? String,
             let text = dictionary["text"] as? String,
             let detailText = dictionary["detailText"] as? String,
             let isEnabeled = dictionary["isEnabled"] as? Bool,
             let imageUrls = dictionary["imageUrls"] as? [String],
-        
             let documentID = dictionary["documentID"] as? String else {
+                print("Ticket 初期化失敗")
                 return nil
         }
     
-        
-        self.init(startDate: startDate, endDate: endDate, shopInfo: shopInfo, price: price, text: text, detailText: detailText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
+        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, text: text, detailText: detailText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
     }
     
     

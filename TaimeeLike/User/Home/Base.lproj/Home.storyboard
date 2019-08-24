@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--ホーム-->
         <scene sceneID="yYw-tt-IbS">
             <objects>
                 <viewController id="Qeq-Bv-QxD" customClass="HomeViewController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ah-lZ-e9u">
-                                <rect key="frame" x="0.0" y="174" width="375" height="443"/>
+                                <rect key="frame" x="0.0" y="174" width="375" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ja-3I-f2j">
@@ -41,55 +41,20 @@
                                     <constraint firstAttribute="trailing" secondItem="NOY-U1-QRF" secondAttribute="trailing" id="pAI-8v-YqQ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQK-Ze-eZS">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1PX-Xn-hin">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b1-mr-TX9">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlW-Z3-2Ic">
-                                                <rect key="frame" x="125" y="0.0" width="125" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6r-4B-q4P">
-                                                <rect key="frame" x="250" y="0.0" width="125" height="50"/>
-                                                <state key="normal" title="Button" image="profile_selected"/>
-                                                <connections>
-                                                    <action selector="showProfile:" destination="Qeq-Bv-QxD" eventType="touchUpInside" id="7WW-Po-eBu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="1PX-Xn-hin" firstAttribute="top" secondItem="RQK-Ze-eZS" secondAttribute="top" id="22A-Jn-hK1"/>
-                                    <constraint firstItem="1PX-Xn-hin" firstAttribute="leading" secondItem="RQK-Ze-eZS" secondAttribute="leading" id="EdR-BM-6Uu"/>
-                                    <constraint firstAttribute="bottom" secondItem="1PX-Xn-hin" secondAttribute="bottom" id="MRc-qS-YRa"/>
-                                    <constraint firstAttribute="trailing" secondItem="1PX-Xn-hin" secondAttribute="trailing" id="lbZ-gh-X6i"/>
-                                    <constraint firstAttribute="height" constant="50" id="xCt-cm-xq5"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gpj-2S-DtA" firstAttribute="trailing" secondItem="RQK-Ze-eZS" secondAttribute="trailing" id="2CK-yL-Y5I"/>
-                            <constraint firstItem="RQK-Ze-eZS" firstAttribute="leading" secondItem="gpj-2S-DtA" secondAttribute="leading" id="4hE-MJ-R1w"/>
                             <constraint firstItem="5Ja-3I-f2j" firstAttribute="top" secondItem="gpj-2S-DtA" secondAttribute="top" id="869-tG-DD9"/>
-                            <constraint firstItem="RQK-Ze-eZS" firstAttribute="top" secondItem="4ah-lZ-e9u" secondAttribute="bottom" id="Ddc-3P-XZH"/>
+                            <constraint firstItem="gpj-2S-DtA" firstAttribute="bottom" secondItem="4ah-lZ-e9u" secondAttribute="bottom" id="Sa7-R6-c44"/>
                             <constraint firstItem="5Ja-3I-f2j" firstAttribute="leading" secondItem="gpj-2S-DtA" secondAttribute="leading" id="Z0E-Uh-Kjc"/>
                             <constraint firstItem="gpj-2S-DtA" firstAttribute="trailing" secondItem="5Ja-3I-f2j" secondAttribute="trailing" id="dTO-wP-39k"/>
                             <constraint firstItem="4ah-lZ-e9u" firstAttribute="leading" secondItem="gpj-2S-DtA" secondAttribute="leading" id="dXx-Pp-596"/>
                             <constraint firstItem="4ah-lZ-e9u" firstAttribute="top" secondItem="5Ja-3I-f2j" secondAttribute="bottom" id="eDr-51-Irb"/>
                             <constraint firstItem="gpj-2S-DtA" firstAttribute="trailing" secondItem="4ah-lZ-e9u" secondAttribute="trailing" id="kXg-JC-fpw"/>
-                            <constraint firstItem="gpj-2S-DtA" firstAttribute="bottom" secondItem="RQK-Ze-eZS" secondAttribute="bottom" id="mxg-La-6ep"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gpj-2S-DtA"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="gear" id="OkX-UQ-vzX"/>
                     <navigationItem key="navigationItem" id="SFF-Oh-qD6"/>
                     <connections>
                         <outlet property="calendarView" destination="NOY-U1-QRF" id="ObZ-8g-VT8"/>
@@ -99,11 +64,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aF0-tM-5FD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328.8" y="-228.03598200899552"/>
+            <point key="canvasLocation" x="2268" y="-228.03598200899552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sfL-tM-p4a">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XXu-PG-UMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E5N-fa-nKi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i0L-VB-JqR">
@@ -112,15 +78,55 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Qeq-Bv-QxD" kind="relationship" relationship="rootViewController" id="afj-v8-ke5"/>
+                        <segue destination="2OK-P1-WaU" kind="relationship" relationship="rootViewController" id="afj-v8-ke5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XXu-PG-UMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="572" y="-228.03598200899552"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dlL-oG-8ub">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmD-9j-ow6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2OK-P1-WaU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QHl-Ab-3RE"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2wB-pj-opc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Qeq-Bv-QxD" kind="relationship" relationship="viewControllers" id="UQi-EE-nVu"/>
+                        <segue destination="AMC-i3-iTe" kind="relationship" relationship="viewControllers" id="Pkn-Sr-rGv"/>
+                        <segue destination="ljI-iO-LmJ" kind="relationship" relationship="viewControllers" id="LX4-qe-wxP"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="1328.8" y="-228.03598200899552"/>
+        </scene>
+        <!--Ticket-->
+        <scene sceneID="MRM-J7-E2H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1L-yg-zCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="Ticket" storyboardName="Ticket" id="AMC-i3-iTe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="チケット" image="gear" selectedImage="gear" id="0uL-WO-F2L"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="1515" y="453"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="PEt-Ck-6HZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Profile" id="ljI-iO-LmJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="プロフィール" id="Jgc-Ah-l9r"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-Eg-lxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2180" y="335"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="profile_selected" width="22" height="22"/>
+        <image name="gear" width="25" height="25"/>
     </resources>
 </document>

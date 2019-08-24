@@ -16,14 +16,14 @@ class HomeViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    // 日付とかのまとめて貼ってあるビュー
+    /// カレンダー用のビュー
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var calendarView: FSCalendar!
 
-    // 過去にスクロールdされた合計のオフセット
+    // 過去にスクロールされた合計のオフセット
     var pastDistance: CGFloat = 0
     
     // 画面遷移の進み具合に関する情報を保持するクラス
@@ -34,7 +34,10 @@ class HomeViewController: UIViewController {
     private var selectedFrame: CGRect?
     private var selectedImage: UIImage?
 
+    /// firebaseから受け取ったデータを格納するやつ
     var ticketData: [Ticket] = []
+    
+    
     var ticketListener: ListenerRegistration?
     
    
@@ -42,7 +45,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         checkCurrentUser()
-        
         
         setupCalendar()
         
@@ -79,10 +81,12 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
+    // firebaseにダミーのデータを送る
     func sampleDB() {
         
         let shopNum = 3
-        
+
         for i in 0..<shopNum {
             
             let shop = Shop(shopName: Shop.shopName[i], issueTicket: nil, address: Shop.address[i], shopID: UUID().uuidString)
@@ -95,9 +99,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
     func startListeningForTickets() {
         
-        let basicQuery = Firestore.firestore().collection("tickets").limit(to: 20)
+        let basicQuery = db.tickets.limit(to: 20)
         
         ticketListener = basicQuery.addSnapshotListener({ (snapshot, error) in
             if let error = error {
@@ -106,14 +111,12 @@ class HomeViewController: UIViewController {
             }
             guard let snapshot = snapshot else { return }
             self.ticketData = []
-            
             for ticketDocument in snapshot.documents {
                 if let newTicket = Ticket(document: ticketDocument) {
                     self.ticketData.append(newTicket)
                 }
             }
             self.tableView.reloadData()
-            print(self.ticketData.count)
         })
     }
     
@@ -123,13 +126,10 @@ class HomeViewController: UIViewController {
     }
     
     
-    
+    // カレンダーの初期設定
     func setupCalendar() {
         calendarView.scope = .week
 //        calendarView.collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
-
-
-
 
         let weekDayLabel = self.calendarView.calendarWeekdayView.weekdayLabels
         weekDayLabel[0].text = "日"
@@ -164,18 +164,9 @@ class HomeViewController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         }
-        print(distanceDif)
+//        print(distanceDif)
         
         pastDistance =  scrollView.contentOffset.y
-    }
-    
-    @IBAction func showProfile(_ sender: UIButton) {
-        
-        let storyBoard = UIStoryboard(name: "Profile", bundle: nil)
-        
-        guard let vc = storyBoard.instantiateViewController(withIdentifier: "Profile") as? ProfileViewController else { return }
-        
-        navigationController?.pushViewController(vc, animated: false)
     }
 }
 
@@ -196,20 +187,22 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         selectedImage = cell.shopImageView.image
         selectedFrame = view.convert(cell.shopImageView.frame, from: cell.shopImageView.superview)
         
-        let storyboard = UIStoryboard(name: "DetailJob", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "DetailTicketController") as! DetailTicketController
-
-        // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
+        // 画面遷移時に遷移先のticketにticketdataを渡す
+        let controller = DetailTicketController.fromStoryboard(forTicket: ticketData[indexPath.row])
         self.navigationController?.pushViewController(controller, animated: true)
+        // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+        return ticketData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JobTableViewCell", for: indexPath) as! JobTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        cell.ticketData = ticketData[indexPath.row]
         
         return cell
     }

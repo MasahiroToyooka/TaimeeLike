@@ -21,5 +21,19 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "Ticket.init(dictionary:):Ticket.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dictionary">
+            </PersistentString>
+            <PersistentString
+               value = "startDate">
+            </PersistentString>
+            <PersistentString
+               value = "dictionary[&quot;shopInfo&quot;] as? [String: Any]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -7,12 +7,30 @@
 //
 
 import UIKit
+import SDWebImage
 
 class JobTableViewCell: UITableViewCell {
     
     @IBOutlet weak var shopImageView: UIImageView!
     
-
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var titleText: UILabel!
+    
+    @IBOutlet weak var detailText: UILabel!
+    @IBOutlet weak var priceText: UILabel!
+    
+    
+    var ticketData: Ticket? {
+        didSet {
+            
+            guard let image = ticketData?.imageUrls else { return }
+            shopImageView.sd_setImage(with: URL(string: image.first ?? ""), completed: nil)
+            titleText.text = ticketData?.text
+            detailText.text = ticketData?.detailText
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

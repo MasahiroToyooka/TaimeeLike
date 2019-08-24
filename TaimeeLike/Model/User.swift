@@ -21,6 +21,7 @@ struct User {
     
     var userID: String
     var name: String
+    // var profileImage
     var birthDay: Date
     var address: String
     var phoneNumber: Int
