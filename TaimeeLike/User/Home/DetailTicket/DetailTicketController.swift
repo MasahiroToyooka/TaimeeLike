@@ -21,6 +21,9 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         return controller
     }
     
+    // 
+    @IBOutlet weak var bottomContantView: UIView!
+    
     // 遷移せれるときにデータを受け取る用の変数
     private var ticket: Ticket!
     
@@ -29,10 +32,12 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
             pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
-            self.pagerView.itemSize = FSPagerView.automaticSize
+            self.pagerView.itemSize = CGSize(width: 370 , height: 180)
+            self.pagerView.interitemSpacing = 10
         }
     }
     
+    // pagerviewが何番目かを表示するやつ
     @IBOutlet weak var pageControl: FSPageControl! {
         didSet {
             self.pageControl.numberOfPages = self.ticket.imageUrls?.count ?? 0
@@ -45,9 +50,18 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pagerView.delegate = self
+        pagerView.dataSource = self
         
-            pagerView.delegate = self
-            pagerView.dataSource = self
+        navigationItem.title = ticket.text
+        
+        
+        bottomContantView.layer.shadowOffset = CGSize(width: 0, height: -2)
+        bottomContantView.layer.shadowColor = UIColor.black.cgColor
+        bottomContantView.layer.shadowOpacity = 0.4
+        bottomContantView.layer.shadowRadius = 10
+        
+//        bottomContantView.clipsToBounds = false
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {

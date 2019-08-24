@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ホーム-->
+        <!--探す-->
         <scene sceneID="yYw-tt-IbS">
             <objects>
                 <viewController id="Qeq-Bv-QxD" customClass="HomeViewController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gpj-2S-DtA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ホーム" image="gear" id="OkX-UQ-vzX"/>
+                    <tabBarItem key="tabBarItem" title="探す" image="search_selected" id="OkX-UQ-vzX"/>
                     <navigationItem key="navigationItem" id="SFF-Oh-qD6"/>
                     <connections>
                         <outlet property="calendarView" destination="NOY-U1-QRF" id="ObZ-8g-VT8"/>
@@ -109,7 +109,7 @@
         <scene sceneID="MRM-J7-E2H">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Ticket" storyboardName="Ticket" id="AMC-i3-iTe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="チケット" image="gear" selectedImage="gear" id="0uL-WO-F2L"/>
+                    <tabBarItem key="tabBarItem" title="チケット" image="チケットのアイコン素材 (2)" selectedImage="gear" id="0uL-WO-F2L"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1L-yg-zCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,7 +119,7 @@
         <scene sceneID="PEt-Ck-6HZ">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="Profile" id="ljI-iO-LmJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="プロフィール" image="gear" id="Jgc-Ah-l9r"/>
+                    <tabBarItem key="tabBarItem" title="プロフィール" image="profile_selected" id="Jgc-Ah-l9r"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aq8-Eg-lxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,5 +128,8 @@
     </scenes>
     <resources>
         <image name="gear" width="25" height="25"/>
+        <image name="profile_selected" width="22" height="22"/>
+        <image name="search_selected" width="22" height="22"/>
+        <image name="チケットのアイコン素材 (2)" width="32" height="32"/>
     </resources>
 </document>

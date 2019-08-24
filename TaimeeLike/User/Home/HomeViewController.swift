@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkCurrentUser()
+//        checkCurrentUser()
         
         setupCalendar()
         
@@ -189,6 +189,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         // 画面遷移時に遷移先のticketにticketdataを渡す
         let controller = DetailTicketController.fromStoryboard(forTicket: ticketData[indexPath.row])
+//        self.tabBarController?.navigationController?.present(controller, animated: false, completion: nil)
+
         self.navigationController?.pushViewController(controller, animated: true)
         // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
 
