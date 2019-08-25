@@ -13,9 +13,7 @@ import FSCalendar
 import FirebaseAuth
 
 class UserHomeController: UIViewController {
-    
-    let db = Firestore.firestore()
-    
+        
     /// カレンダー用のビュー
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
     
@@ -82,8 +80,8 @@ class UserHomeController: UIViewController {
     
     
     func startListeningForTickets() {
-        
-        let basicQuery = db.tickets.limit(to: 20)
+        // チケットの状態が０のやつ(企業が投稿して申し込みがされていない状態)のだけ取得
+        let basicQuery = db.tickets.whereField("ticketState", isEqualTo: 0)
         
         ticketListener = basicQuery.addSnapshotListener({ (snapshot, error) in
             if let error = error {

@@ -9,11 +9,14 @@
 import UIKit
 import Firebase
 
+let db = Firestore.firestore()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
     override init() {
         // 初期化
         super.init()

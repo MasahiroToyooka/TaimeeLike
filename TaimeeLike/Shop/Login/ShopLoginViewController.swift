@@ -24,7 +24,6 @@ class ShopLoginViewController: UIViewController {
     // お店の住所
     @IBOutlet weak var addressTextField: UITextField!
     
-    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +60,7 @@ class ShopLoginViewController: UIViewController {
             print("新規作成成功")
             
             self.dismiss(animated: true, completion: {
-                self.db.add(shop: Shop(stockName: stockName, shopName: shopName, address: address, shopID: user!.user.uid))
+                db.add(shop: Shop(stockName: stockName, shopName: shopName, address: address, shopID: user!.user.uid))
             })
         }
     }

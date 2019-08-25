@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import FSPagerView
+import FirebaseAuth
 
 class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
 
@@ -28,9 +29,12 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var detailText: UILabel!
     @IBOutlet weak var attentionLabel: UILabel!
     
+
+    
+    
     // 遷移せれるときにデータを受け取る用の変数
     private var ticket: Ticket!
-    
+
     
     // お店についての画像
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -89,5 +93,23 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
         cell.imageView?.sd_setImage(with: URL(string: ticket.imageUrls?[index] ?? ""), completed: nil)
         return cell
+    }
+    
+    @IBAction func applyButton(_ sender: UIButton) {
+        updateTicketState()
+        self.navigationController?.popViewController(animated: true)
+        
+        
+        db.users.document(Auth.auth().currentUser!.uid).updateData([
+            "allTicket": [ticket.documentID]
+        ])
+    }
+    
+
+    // チケットの状態を0から１に変える
+    func updateTicketState() {
+        db.tickets.document(ticket.documentID).updateData([
+                "ticketState": 1
+        ])
     }
 }

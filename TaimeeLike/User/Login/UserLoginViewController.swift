@@ -20,7 +20,6 @@ class UserLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
 
@@ -34,8 +33,7 @@ class UserLoginViewController: UIViewController {
                 print("ログイン失敗", error)
                 return
             }
-            
-            
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -51,6 +49,7 @@ class UserLoginViewController: UIViewController {
                 print("新規作成失敗", error)
                 return
             }
+            self.dismiss(animated: true)
         }
     }
 }

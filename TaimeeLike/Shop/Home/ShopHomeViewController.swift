@@ -14,7 +14,6 @@ import FirebaseAuth
 
 class ShopHomeViewController: UIViewController {
 
-    let db = Firestore.firestore()
     
     var shop: Shop?
     

@@ -18,5 +18,8 @@ class ProfileViewController: UIViewController {
     
     @IBAction func editProfile(_ sender: UIButton) {
         
+        let storyboard = UIStoryboard(name: "EditProfile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController")
+        present(vc, animated: true)
     }
 }

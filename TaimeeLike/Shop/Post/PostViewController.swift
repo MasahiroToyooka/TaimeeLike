@@ -33,9 +33,7 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var attentionLabel: UITextField!
     
-    
-    let db = Firestore.firestore()
-    
+        
     var shop: Shop!
     
     override func viewDidLoad() {
