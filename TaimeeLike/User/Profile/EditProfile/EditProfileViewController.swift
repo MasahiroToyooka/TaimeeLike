@@ -32,9 +32,6 @@ class EditProfileViewController: UIViewController {
         
         guard let uid = Auth.auth().currentUser?.uid else { return  }
         
-        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phone, haveTicket: nil, ticketPlan: nil))
+        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phone, allTicket: nil))
     }
-    
-    
-    
 }

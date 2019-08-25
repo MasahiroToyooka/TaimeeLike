@@ -83,22 +83,24 @@ class HomeViewController: UIViewController {
     
     
     // firebaseにダミーのデータを送る
-    func sampleDB() {
-        
-        let shopNum = 3
-
-        for i in 0..<shopNum {
-            
-            let shop = Shop(shopName: Shop.shopName[i], issueTicket: nil, address: Shop.address[i], shopID: UUID().uuidString)
-            db.add(shop: shop)
-
-            let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
+//    func sampleDB() {
+//        
+//        let shopNum = 3
 //
-            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], attentionText: "きおつけろ！！", isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
-//            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
-            db.add(ticket: ticket)
-        }
-    }
+//        for i in 0..<shopNum {
+//            
+//            let shop = Shop(stockName: "株式会社まるまる", shopName: Shop.shopName[i], address: Shop.address[i], shopID: <#T##String#>)
+////            let shop = Shop(shopName: Shop.shopName[i], issueTicket: nil, address: Shop.address[i], shopID: UUID().uuidString)
+////            db.add(shop: shop)
+//
+//            let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
+////
+//            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: <#T##[String : Any]#>, price: <#T##Int?#>, productText: <#T##String?#>, text: <#T##String#>, detailText: <#T##String#>, attentionText: <#T##String#>, ticketState: <#T##Int#>, imageUrls: <#T##[String]?#>, documentID: <#T##String#>)
+////            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], attentionText: "きおつけろ！！", ticketState: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+////            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+//            db.add(ticket: ticket)
+//        }
+//    }
     
     
     func startListeningForTickets() {

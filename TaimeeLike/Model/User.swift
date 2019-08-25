@@ -25,8 +25,8 @@ struct User {
     var birthDay: Date
     var address: String
     var phoneNumber: Int
-    var haveTicket: [[String: Any]]?
-    var ticketPlan: [[String: Any]]?
+    // 申し込んだチケットを全て入れる
+    var allTicket: [[String: Any]]?
 }
 
 extension User: DocumentSerializable {
@@ -58,10 +58,9 @@ extension User: DocumentSerializable {
             let birthDay = dictionary["birthDay"] as? Date,
             let address = dictionary["address"] as? String,
             let phoneNumber = dictionary["phoneNumber"] as? Int,
-            let haveTicket = dictionary["haveTicket"] as? [[String: Any]],
-            let ticketPlan = dictionary["ticketPlan"] as? [[String: Any]] else { return nil }
+            let allTicket = dictionary["allTicket"] as? [[String: Any]] else { return nil }
    
-        self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber, haveTicket: haveTicket, ticketPlan: ticketPlan)
+        self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber, allTicket: allTicket)
     }
     
     public init?(document: QueryDocumentSnapshot) {
@@ -80,8 +79,7 @@ extension User: DocumentSerializable {
             "birthDay": birthDay,
             "address": address,
             "phoneNumber": phoneNumber,
-            "haveTicket": haveTicket,
-            "ticketPlan": ticketPlan
+            "allTicket": allTicket
         ]
     }
 }

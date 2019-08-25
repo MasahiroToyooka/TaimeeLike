@@ -15,13 +15,24 @@ struct Ticket {
     
     var startDate: Date
     var endDate: Date
+    
+    // チケットを発行する店の情報
     var shopInfo: [String: Any]
-    var price: String
+    // 商品券の値段
+    var price: Int?
+    
+    // 商品の情報
+    var productText: String?
+    // 仕事内容のタイトル
     var text: String
+    // 仕事内容の詳細
     var detailText: String
+    // 働く時の店が提供する注意事項
     var attentionText: String
-    /// userがチケットを使ったらfalseにするやつ
-    var isEnabled: Bool
+    
+    /// 企業がチケットを発行したら0, userが申し込んだら１、 仕事が完了したら２、　チケットを消費したら３
+    var ticketState: Int
+    // チケットの画像
     var imageUrls: [String]?
     var documentID: String
 }
@@ -34,18 +45,18 @@ extension Ticket: DocumentSerializable {
         guard let startDate = dictionary["startDate"] as? Timestamp,
             let endDate = dictionary["endDate"] as? Timestamp,
             let shopInfo = dictionary["shopInfo"] as? [String: Any],
-            let price = dictionary["price"] as? String,
+            let price = dictionary["price"] as? Int,
+            let productText = dictionary["productText"] as? String,
             let text = dictionary["text"] as? String,
             let detailText = dictionary["detailText"] as? String,
             let attentionText = dictionary["attentionText"] as? String,
-            let isEnabeled = dictionary["isEnabled"] as? Bool,
+            let ticketState = dictionary["ticketState"] as? Int,
             let imageUrls = dictionary["imageUrls"] as? [String],
             let documentID = dictionary["documentID"] as? String else {
                 print("Ticket 初期化失敗")
                 return nil
         }
-    
-        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, text: text, detailText: detailText, attentionText: attentionText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
+        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, productText: productText, text: text, detailText: detailText, attentionText: attentionText, ticketState: ticketState, imageUrls: imageUrls, documentID: documentID)
         
         print("初期化成功！！")
     }
@@ -64,8 +75,9 @@ extension Ticket: DocumentSerializable {
         return [
             "documentID": documentID,
             "shopInfo": shopInfo,
-            "price": price,
-            "isEnabled": isEnabled,
+            "price": price ?? 0,
+            "productText": productText ?? "",
+            "ticketState": ticketState,
             "startDate": startDate,
             "endDate": endDate,
             "imageUrls": imageUrls ?? "",

@@ -54,8 +54,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注意事項" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luY-wX-WP8">
+                                <rect key="frame" x="183" y="590" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-jo-KGs">
-                                <rect key="frame" x="200" y="636" width="62" height="30"/>
+                                <rect key="frame" x="200" y="696" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="発行する"/>
                                 <connections>
@@ -67,6 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="RXo-Hn-qto"/>
                     </view>
                     <connections>
+                        <outlet property="attentionLabel" destination="luY-wX-WP8" id="oPq-Tb-5G6"/>
                         <outlet property="detailtext" destination="dZm-fj-tJW" id="WR0-ax-wSu"/>
                         <outlet property="endTime" destination="lkZ-aF-EmW" id="kiI-Qq-TXm"/>
                         <outlet property="priceText" destination="1BL-s6-fgA" id="0lI-sC-PfP"/>
