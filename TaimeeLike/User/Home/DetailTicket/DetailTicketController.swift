@@ -23,6 +23,10 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     
     // 
     @IBOutlet weak var bottomContantView: UIView!
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var detailText: UILabel!
+    @IBOutlet weak var attentionLabel: UILabel!
     
     // 遷移せれるときにデータを受け取る用の変数
     private var ticket: Ticket!
@@ -54,14 +58,18 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         pagerView.dataSource = self
         
         navigationItem.title = ticket.text
+        textLabel.text = ticket.text
+        dateLabel.text = "\(ticket.startDate)~\(ticket.endDate)"
+        detailText.text = ticket.detailText
+        attentionLabel.text = ticket.attentionText
+        
+        
         
         
         bottomContantView.layer.shadowOffset = CGSize(width: 0, height: -2)
         bottomContantView.layer.shadowColor = UIColor.black.cgColor
         bottomContantView.layer.shadowOpacity = 0.4
         bottomContantView.layer.shadowRadius = 10
-        
-//        bottomContantView.clipsToBounds = false
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {

@@ -16,4 +16,9 @@ target 'TaimeeLike' do
   pod 'Firebase/Storage'
   pod 'FSCalendar'
   pod 'FSPagerView'
+  pod 'IBAnimatable'
+  pod 'Material', '~> 3.1.0'
+  pod 'XLPagerTabStrip', '~> 9.0'
+
+
 end

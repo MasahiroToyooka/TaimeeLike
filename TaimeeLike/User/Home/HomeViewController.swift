@@ -93,8 +93,9 @@ class HomeViewController: UIViewController {
             db.add(shop: shop)
 
             let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
-            
-            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+//
+            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], attentionText: "きおつけろ！！", isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
+//            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
             db.add(ticket: ticket)
         }
     }

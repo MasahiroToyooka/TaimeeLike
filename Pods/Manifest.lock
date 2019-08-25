@@ -136,7 +136,15 @@ PODS:
     - nanopb (~> 0.3)
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.2.2)
+  - IBAnimatable (6.0.0)
   - leveldb-library (1.20)
+  - Material (3.1.6):
+    - Material/Core (= 3.1.6)
+  - Material/Core (3.1.6):
+    - Motion (~> 3.1.1)
+  - Motion (3.1.1):
+    - Motion/Core (= 3.1.1)
+  - Motion/Core (3.1.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -149,6 +157,7 @@ PODS:
   - SwiftMessages (7.0.0):
     - SwiftMessages/App (= 7.0.0)
   - SwiftMessages/App (7.0.0)
+  - XLPagerTabStrip (9.0.0)
 
 DEPENDENCIES:
   - Firebase/Core
@@ -159,8 +168,11 @@ DEPENDENCIES:
   - FirebaseUI/Google
   - FSCalendar
   - FSPagerView
+  - IBAnimatable
+  - Material (~> 3.1.0)
   - SDWebImage
   - SwiftMessages
+  - XLPagerTabStrip (~> 9.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -187,11 +199,15 @@ SPEC REPOS:
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
+    - IBAnimatable
     - leveldb-library
+    - Material
+    - Motion
     - nanopb
     - Protobuf
     - SDWebImage
     - SwiftMessages
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -217,12 +233,16 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  IBAnimatable: d49f9fee0c401b5b08d31b77256b77fb067e0e92
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  Material: 9b30613deb1b79487eeede5e4f90cbff084311ea
+  Motion: f115b33f36cc52472a25a965daa89b3859817de0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SwiftMessages: a952f7a9103d9aeab93730a2861d2d8fcdd8758f
+  XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 6febbfe370d681ef90d562d25022a72c45919656
+PODFILE CHECKSUM: 3f4add66ca97a2c8b53dcabb2ad16cb566aaf489
 
 COCOAPODS: 1.5.3

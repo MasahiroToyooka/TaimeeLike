@@ -40,6 +40,8 @@
 		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
 		C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */; };
+		C1CF3C1223124E37007C2E14 /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF3C1123124E37007C2E14 /* ShopHomeViewController.swift */; };
+		C1CF3C1423124E4B007C2E14 /* ShopHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CF3C1323124E4B007C2E14 /* ShopHome.storyboard */; };
 		C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FF485B2309211A002B2CBD /* HomeViewController.swift */; };
 		C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FF4860230A5E90002B2CBD /* Profile.storyboard */; };
 		FA15AD3E930F23F1AC378714 /* Pods_TaimeeLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */; };
@@ -83,6 +85,8 @@
 		C169DA77230692EA001EBE1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C169DA7A230692EA001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C169DA7C230692EA001EBE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1CF3C1123124E37007C2E14 /* ShopHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
+		C1CF3C1323124E4B007C2E14 /* ShopHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopHome.storyboard; sourceTree = "<group>"; };
 		C1FF485B2309211A002B2CBD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C1FF4860230A5E90002B2CBD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		C155B3A4230D5FF400B10988 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				C1CF3C1023124E16007C2E14 /* Home */,
 				C155B3A5230D600600B10988 /* Post */,
 				C155B3A1230D59D900B10988 /* Login */,
 			);
@@ -257,6 +262,15 @@
 				C169DA7C230692EA001EBE1E /* Info.plist */,
 			);
 			path = TaimeeLike;
+			sourceTree = "<group>";
+		};
+		C1CF3C1023124E16007C2E14 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1CF3C1123124E37007C2E14 /* ShopHomeViewController.swift */,
+				C1CF3C1323124E4B007C2E14 /* ShopHome.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		C1FF4859230920A9002B2CBD /* Home */ = {
@@ -354,6 +368,7 @@
 				C155B3C0230F7E7000B10988 /* EditProfile.storyboard in Resources */,
 				C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */,
 				C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */,
+				C1CF3C1423124E4B007C2E14 /* ShopHome.storyboard in Resources */,
 				C155B3A3230D5A1F00B10988 /* Login.storyboard in Resources */,
 				C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */,
 				C155B3BB230F7CC400B10988 /* Ticket.storyboard in Resources */,
@@ -382,9 +397,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -398,9 +417,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -469,6 +492,7 @@
 				C155B39A230BBD7000B10988 /* User.swift in Sources */,
 				C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */,
 				C155B3AF230DB9CC00B10988 /* Ticket.swift in Sources */,
+				C1CF3C1223124E37007C2E14 /* ShopHomeViewController.swift in Sources */,
 				C125A156230A96A2001B2BE0 /* DetailTicketController.swift in Sources */,
 				C155B3C2230F7E9100B10988 /* EditProfileViewController.swift in Sources */,
 				C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */,
@@ -632,6 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -651,6 +676,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

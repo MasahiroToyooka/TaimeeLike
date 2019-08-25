@@ -148,7 +148,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpn-oA-4NJ">
                                                         <rect key="frame" x="24" y="93.5" width="366" height="401"/>
-                                                        <mutableString key="text">飲食店なので清潔感のある格好でお願いします。　　　　　　　　　　　　　　　　　　　・髪型、服装は清潔感のあるシンプルなデザインのものを選ぶ
+                                                        <string key="text">飲食店なので清潔感のある格好でお願いします。　　　　　　　　　　　　　　　　　　　・髪型、服装は清潔感のあるシンプルなデザインのものを選ぶ
 ・靴や服装は動きやすいものを選ぶ
 ・アクセサリーや香水、ネイルなどは控える
 ・心配なら先にどんな服装がいいか確認しておく
@@ -158,11 +158,11 @@
 シワの多い服や、汚れた靴も印象が良くないので気を付けましょう。
 
 特に衛生面に厳しい飲食店では、濃いメイクや派手な髪型、不潔な印象の服装はふさわしくありません。
-たとえ制服に着替えるにしても、汚れや露出が目立つ服装は控えましょう。　　　　　　</mutableString>
+たとえ制服に着替えるにしても、汚れや露出が目立つ服装は控えましょう。　　　　　　</string>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
-                                                        <mutableString key="userLabel">飲食店なので清潔感のある格好でお願いします。                   ・髪型、服装は清潔感のあるシンプルなデザインのものを選ぶ ・靴や服装は動きやすいものを選ぶ ・アクセサリーや香水、ネイルなどは控える ・心配なら先にどんな服装がいいか確認しておく  初日は面接の時に近い服装で行くのもおすすめです。 面接の時に比べて派手だったり、露出が多かったりする服装では、相手はギャップを感じて戸惑ってしまいます。 シワの多い服や、汚れた靴も印象が良くないので気を付けましょう。  特に衛生面に厳しい飲食店では、濃いメイクや派手な髪型、不潔な印象の服装はふさわしくありません。 たとえ制服に着替えるにしても、汚れや露出が目立つ服装は控えましょう。</mutableString>
+                                                        <string key="userLabel">飲食店なので清潔感のある格好でお願いします。                   ・髪型、服装は清潔感のあるシンプルなデザインのものを選ぶ ・靴や服装は動きやすいものを選ぶ ・アクセサリーや香水、ネイルなどは控える ・心配なら先にどんな服装がいいか確認しておく  初日は面接の時に近い服装で行くのもおすすめです。 面接の時に比べて派手だったり、露出が多かったりする服装では、相手はギャップを感じて戸惑ってしまいます。 シワの多い服や、汚れた靴も印象が良くないので気を付けましょう。  特に衛生面に厳しい飲食店では、濃いメイクや派手な髪型、不潔な印象の服装はふさわしくありません。 たとえ制服に着替えるにしても、汚れや露出が目立つ服装は控えましょう。</string>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,9 +245,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="cFG-4w-9bs"/>
                     <connections>
+                        <outlet property="attentionLabel" destination="Vpn-oA-4NJ" id="FMI-L3-mDt"/>
                         <outlet property="bottomContantView" destination="eGs-hB-tDV" id="PPa-cN-ChB"/>
+                        <outlet property="dateLabel" destination="mBD-fp-8HN" id="MpS-Vb-M3o"/>
+                        <outlet property="detailText" destination="9kw-4M-OcP" id="SYF-mj-t2D"/>
                         <outlet property="pageControl" destination="1Oo-fZ-iNH" id="h9Z-pg-Vst"/>
                         <outlet property="pagerView" destination="f0a-bh-tJA" id="8lg-5S-TR3"/>
+                        <outlet property="textLabel" destination="yyP-R6-30N" id="stU-ha-LV3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAn-eR-9jy" userLabel="First Responder" sceneMemberID="firstResponder"/>

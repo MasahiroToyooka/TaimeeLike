@@ -30,10 +30,24 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        checkCurrentUser()
+        
     }
     
 
-
+    func checkCurrentUser() {
+        if Auth.auth().currentUser == nil {
+            
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! ShopLoginViewController
+                
+                self.present(vc, animated: true)
+            }
+        } else {
+            print(Auth.auth().currentUser!.uid)
+        }
+    }
     
     @IBAction func PostButton(_ sender: UIButton) {
         guard let startTime: Date = startTime.date, let endDate: Date = endTime.date, let text = text.text, let detailText = detailtext.text, let price = priceText.text else {

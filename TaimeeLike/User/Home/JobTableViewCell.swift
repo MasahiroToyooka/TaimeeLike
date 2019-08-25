@@ -36,7 +36,10 @@ class JobTableViewCell: UITableViewCell {
         
         backgroundColor = .white
       
-        
+//        shopImageView.layer.shadowOffset = CGSize(width: 100, height: -200)
+//        shopImageView.layer.shadowColor = UIColor.black.cgColor
+//        shopImageView.layer.shadowOpacity = 0.8
+//        shopImageView.layer.shadowRadius = 0
     
     }
 

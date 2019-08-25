@@ -19,7 +19,7 @@ struct Ticket {
     var price: String
     var text: String
     var detailText: String
-    
+    var attentionText: String
     /// userがチケットを使ったらfalseにするやつ
     var isEnabled: Bool
     var imageUrls: [String]?
@@ -37,6 +37,7 @@ extension Ticket: DocumentSerializable {
             let price = dictionary["price"] as? String,
             let text = dictionary["text"] as? String,
             let detailText = dictionary["detailText"] as? String,
+            let attentionText = dictionary["attentionText"] as? String,
             let isEnabeled = dictionary["isEnabled"] as? Bool,
             let imageUrls = dictionary["imageUrls"] as? [String],
             let documentID = dictionary["documentID"] as? String else {
@@ -44,7 +45,9 @@ extension Ticket: DocumentSerializable {
                 return nil
         }
     
-        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, text: text, detailText: detailText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
+        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, text: text, detailText: detailText, attentionText: attentionText, isEnabled: isEnabeled, imageUrls: imageUrls, documentID: documentID)
+        
+        print("初期化成功！！")
     }
     
     
@@ -67,7 +70,8 @@ extension Ticket: DocumentSerializable {
             "endDate": endDate,
             "imageUrls": imageUrls ?? "",
             "text": text,
-            "detailText": detailText
+            "detailText": detailText,
+            "attentionText": attentionText
         ]
     }
     
@@ -77,8 +81,6 @@ extension Ticket: DocumentSerializable {
         return URLString
     }
 }
-
-
 
 
 
