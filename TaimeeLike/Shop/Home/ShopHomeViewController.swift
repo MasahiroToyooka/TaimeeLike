@@ -9,24 +9,56 @@
 
 import UIKit
 import XLPagerTabStrip
+import FirebaseFirestore
+import FirebaseAuth
 
 class ShopHomeViewController: UIViewController {
 
+    let db = Firestore.firestore()
+    
+    var shop: Shop?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        fetchShopData()
+        
+        checkCurrentUser()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func checkCurrentUser() {
+        if Auth.auth().currentUser == nil {
+            
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! ShopLoginViewController
+                
+                self.present(vc, animated: true)
+            }
+        } else {
+            print(Auth.auth().currentUser!.uid)
+        }
     }
-    */
-
+    
+    func fetchShopData() {
+        
+        db.shops.document(Auth.auth().currentUser!.uid).getDocument { (shapshot, error) in
+            
+            if let error = error {
+                print("shop情報の取得失敗", error)
+                return
+            }
+            
+            guard let snapShot = shapshot else { return }
+            
+            self.shop = Shop(document: snapShot)
+        }
+    }
+    
+    @IBAction func postButton(_ sender: UIButton) {
+        guard let shop = shop else { return }
+        let controller = PostViewController.fromStoryboard(forShop: shop)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }

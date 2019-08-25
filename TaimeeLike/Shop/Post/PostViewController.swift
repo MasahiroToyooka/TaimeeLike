@@ -11,6 +11,15 @@ import FirebaseFirestore
 import FirebaseAuth
 
 class PostViewController: UIViewController {
+    
+    // 遷移元でこれを呼び出す
+    static func fromStoryboard(_ storyboard: UIStoryboard = UIStoryboard(name: "Post", bundle: nil), forShop shop: Shop) -> PostViewController {
+        
+        let controller = storyboard.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        controller.shop = shop
+        return controller
+    }
+    
 
     @IBOutlet weak var startTime: UIDatePicker!
     
@@ -27,56 +36,18 @@ class PostViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var shop: Shop?
+    var shop: Shop!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        checkCurrentUser()
         
-//        db.shops.getDocuments { (shop, error) in
-//            let error = error {
-//                print("shop情報の取得失敗",error)
-//                return
-//            }
-//
-//
-//        }
-    
-        
-        fetchShopData()
         
         text.text = "タイトル情報"
     }
     
-    func fetchShopData() {
-        db.shops.document(Auth.auth().currentUser!.uid).getDocument { (shapshot, error) in
-            
-            if let error = error {
-                print("shop情報の取得失敗", error)
-                return
-            }
-            
-            guard let snapShot = shapshot else { return }
-            
-            self.shop = Shop(document: snapShot)
-        }
-    }
     
-    
-    func checkCurrentUser() {
-        if Auth.auth().currentUser == nil {
-            
-            DispatchQueue.main.async {
-                let storyboard = UIStoryboard(name: "Login", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! ShopLoginViewController
-                
-                self.present(vc, animated: true)
-            }
-        } else {
-            print(Auth.auth().currentUser!.uid)
-        }
-    }
+
     
     @IBAction func PostButton(_ sender: UIButton) {
         guard let startDate: Date = startTime.date, let endDate: Date = endTime.date, let text = text.text, let detailText = detailtext.text, let attention = attentionLabel.text, let price = priceText.text else {
@@ -84,16 +55,15 @@ class PostViewController: UIViewController {
         }
         
         let dictionary: [String: Any] = [
-            "stockName": shop?.stockName,
-            "shopName": shop?.shopName,
-            "address": shop?.address,
-            "shopID": shop?.shopID
+            "stockName": shop.stockName,
+            "shopName": shop.shopName,
+            "address": shop.address,
+            "shopID": shop.shopID
         ]
-
-//        let ticket = Ticket(startDate: startTime, endDate: endDate, shopInfo: <#T##[String : Any]#>, price: <#T##String#>, text: <#T##String#>, detailText: <#T##String#>, imageUrls: <#T##[String]?#>, documentID: <#T##String#>)
         
         let ticket = Ticket(startDate: startDate, endDate: endDate, shopInfo: dictionary, price: nil, productText: price, text: text, detailText: detailText, attentionText: attention, ticketState: 0, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
         
         db.add(ticket: ticket)
+        navigationController?.popViewController(animated: true)
     }
 }

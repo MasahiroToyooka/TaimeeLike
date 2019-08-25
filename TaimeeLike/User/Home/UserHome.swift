@@ -12,7 +12,7 @@ import SDWebImage
 import FSCalendar
 import FirebaseAuth
 
-class HomeViewController: UIViewController {
+class UserHomeController: UIViewController {
     
     let db = Firestore.firestore()
     
@@ -44,13 +44,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        checkCurrentUser()
+        checkCurrentUser()
         
         setupCalendar()
         
         tableView.bounces = false
 
-//        sampleDB()
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -80,27 +79,6 @@ class HomeViewController: UIViewController {
             print(Auth.auth().currentUser!.uid)
         }
     }
-    
-    
-    // firebaseにダミーのデータを送る
-//    func sampleDB() {
-//        
-//        let shopNum = 3
-//
-//        for i in 0..<shopNum {
-//            
-//            let shop = Shop(stockName: "株式会社まるまる", shopName: Shop.shopName[i], address: Shop.address[i], shopID: <#T##String#>)
-////            let shop = Shop(shopName: Shop.shopName[i], issueTicket: nil, address: Shop.address[i], shopID: UUID().uuidString)
-////            db.add(shop: shop)
-//
-//            let dictionary: [String: Any] = ["shopName": shop.shopName, "address": shop.address, "shopID": shop.shopID]
-////
-//            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: <#T##[String : Any]#>, price: <#T##Int?#>, productText: <#T##String?#>, text: <#T##String#>, detailText: <#T##String#>, attentionText: <#T##String#>, ticketState: <#T##Int#>, imageUrls: <#T##[String]?#>, documentID: <#T##String#>)
-////            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], attentionText: "きおつけろ！！", ticketState: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
-////            let ticket = Ticket(startDate: Date(), endDate: Date(), shopInfo: dictionary, price: Ticket.prices[i], text: Ticket.texts[i], detailText: Ticket.detailTexts[i], isEnabled: true, imageUrls: Ticket.imageUrls, documentID: UUID().uuidString)
-//            db.add(ticket: ticket)
-//        }
-//    }
     
     
     func startListeningForTickets() {
@@ -180,7 +158,7 @@ class HomeViewController: UIViewController {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension UserHomeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -195,6 +173,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //        self.tabBarController?.navigationController?.present(controller, animated: false, completion: nil)
 
         self.navigationController?.pushViewController(controller, animated: true)
+        
         // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
 
     }
@@ -220,7 +199,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: - UINavigationControllerDelegate
 
-extension HomeViewController: UINavigationControllerDelegate {
+extension UserHomeController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         

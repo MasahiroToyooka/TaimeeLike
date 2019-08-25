@@ -42,7 +42,7 @@
 		C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA79230692EA001EBE1E /* LaunchScreen.storyboard */; };
 		C1CF3C1223124E37007C2E14 /* ShopHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CF3C1123124E37007C2E14 /* ShopHomeViewController.swift */; };
 		C1CF3C1423124E4B007C2E14 /* ShopHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1CF3C1323124E4B007C2E14 /* ShopHome.storyboard */; };
-		C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FF485B2309211A002B2CBD /* HomeViewController.swift */; };
+		C1FF485C2309211A002B2CBD /* UserHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FF485B2309211A002B2CBD /* UserHomeController.swift */; };
 		C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1FF4860230A5E90002B2CBD /* Profile.storyboard */; };
 		FA15AD3E930F23F1AC378714 /* Pods_TaimeeLike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */; };
 /* End PBXBuildFile section */
@@ -87,7 +87,7 @@
 		C169DA7C230692EA001EBE1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1CF3C1123124E37007C2E14 /* ShopHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHomeViewController.swift; sourceTree = "<group>"; };
 		C1CF3C1323124E4B007C2E14 /* ShopHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShopHome.storyboard; sourceTree = "<group>"; };
-		C1FF485B2309211A002B2CBD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C1FF485B2309211A002B2CBD /* UserHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeController.swift; sourceTree = "<group>"; };
 		C1FF4860230A5E90002B2CBD /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C5D10CE7A3560529B0B44AF4 /* Pods-TaimeeLike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaimeeLike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaimeeLike/Pods-TaimeeLike.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,7 +278,7 @@
 			children = (
 				C155B390230AD79200B10988 /* DetailTicket */,
 				C169DA74230692E9001EBE1E /* Home.storyboard */,
-				C1FF485B2309211A002B2CBD /* HomeViewController.swift */,
+				C1FF485B2309211A002B2CBD /* UserHomeController.swift */,
 				C155B38D230ACB9300B10988 /* JobTableViewCell.xib */,
 				C155B38C230ACB9300B10988 /* JobTableViewCell.swift */,
 			);
@@ -505,7 +505,7 @@
 				C155B3AD230DB97600B10988 /* Shop.swift in Sources */,
 				C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */,
 				C155B3AB230D892C00B10988 /* Firestore + Populate.swift in Sources */,
-				C1FF485C2309211A002B2CBD /* HomeViewController.swift in Sources */,
+				C1FF485C2309211A002B2CBD /* UserHomeController.swift in Sources */,
 				C125A14A230A8967001B2BE0 /* OutLinedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
