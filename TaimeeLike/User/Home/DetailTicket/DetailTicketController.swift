@@ -104,8 +104,6 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
             "allTicket": [ticket.documentID]
         ])
     }
-    
-
     // チケットの状態を0から１に変える
     func updateTicketState() {
         db.tickets.document(ticket.documentID).updateData([
