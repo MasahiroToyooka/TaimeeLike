@@ -10,26 +10,53 @@ import UIKit
 import Firebase
 
 let db = Firestore.firestore()
+var user: User?
+var userID = Auth.auth().currentUser?.uid
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
     
     override init() {
         // 初期化
         super.init()
         FirebaseApp.configure()
     }
+    
+    
+    var userListener: ListenerRegistration?
+    
+    func startListeningForUser() {
+        // チケットの状態が０のやつ(企業が投稿して申し込みがされていない状態)のだけ取得
+        let basicQuery = db.users.whereField("userID", isEqualTo: userID)
+        
+        userListener = basicQuery.addSnapshotListener({ (snapshot, error) in
+            if let error = error {
+                print("ホームビューコントローラーにてチケットのデータ取得失敗: ", error)
+                return
+            }
+            guard let document = snapshot?.documents.first else {
+                print("appdelegateのguard文でk弾かれています", snapshot)
+                return
+            }
+           
+            user = User(document: document)
+        })
+    }
+    
+    private func stopListeningForUser() {
+        userListener?.remove()
+        userListener = nil
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        startListeningForUser()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        stopListeningForUser()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

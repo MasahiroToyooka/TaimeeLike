@@ -28,6 +28,25 @@ class JobTableViewCell: UITableViewCell {
             shopImageView.sd_setImage(with: URL(string: image.first ?? ""), completed: nil)
             titleText.text = ticketData?.text
             detailText.text = ticketData?.detailText
+            
+            // Date型から各々好みのフォーマットに変える
+            let startFormatter = DateFormatter()
+            startFormatter.dateFormat = "yyyy年M月dd日 HH:mm"
+            let startDate: String = startFormatter.string(from: ticketData!.startDate)
+            
+            let endFormatter = DateFormatter()
+            endFormatter.dateFormat = "HH:mm"
+            let endTime: String = endFormatter.string(from: ticketData!.endDate)
+            
+            // 2019年8月31日　18:00 ~ 22:00みたいにしている
+            dateLabel.text = "\(startDate) 〜 \(endTime)"
+            
+            
+            if ticketData?.price == nil {
+                priceText.text = ticketData?.productText
+            } else {
+                priceText.text = "\(ticketData?.price)円券"
+            }
         }
     }
     

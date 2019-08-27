@@ -36,6 +36,14 @@
 		C155B3BD230F7CF200B10988 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3BC230F7CF200B10988 /* TicketViewController.swift */; };
 		C155B3C0230F7E7000B10988 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C155B3BF230F7E7000B10988 /* EditProfile.storyboard */; };
 		C155B3C2230F7E9100B10988 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */; };
+		C157050C2314C9AF00AA535D /* ReservationTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157050A2314C9AF00AA535D /* ReservationTicketController.swift */; };
+		C157050F2314C9E300AA535D /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C157050E2314C9E200AA535D /* Reservation.storyboard */; };
+		C15705122314CB0F00AA535D /* ReservationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15705102314CB0F00AA535D /* ReservationCell.swift */; };
+		C15705132314CB0F00AA535D /* ReservationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C15705112314CB0F00AA535D /* ReservationCell.xib */; };
+		C15705172314CCC100AA535D /* HaveTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15705162314CCC100AA535D /* HaveTicketController.swift */; };
+		C15705192314CCD000AA535D /* Have.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15705182314CCD000AA535D /* Have.storyboard */; };
+		C157051C2314CDFA00AA535D /* HaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C157051A2314CDFA00AA535D /* HaveCell.swift */; };
+		C157051D2314CDFA00AA535D /* HaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C157051B2314CDFA00AA535D /* HaveCell.xib */; };
 		C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C169DA70230692E9001EBE1E /* AppDelegate.swift */; };
 		C169DA76230692E9001EBE1E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C169DA74230692E9001EBE1E /* Home.storyboard */; };
 		C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C169DA77230692EA001EBE1E /* Assets.xcassets */; };
@@ -79,6 +87,14 @@
 		C155B3BC230F7CF200B10988 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
 		C155B3BF230F7E7000B10988 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		C157050A2314C9AF00AA535D /* ReservationTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationTicketController.swift; sourceTree = "<group>"; };
+		C157050E2314C9E200AA535D /* Reservation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reservation.storyboard; sourceTree = "<group>"; };
+		C15705102314CB0F00AA535D /* ReservationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationCell.swift; sourceTree = "<group>"; };
+		C15705112314CB0F00AA535D /* ReservationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationCell.xib; sourceTree = "<group>"; };
+		C15705162314CCC100AA535D /* HaveTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveTicketController.swift; sourceTree = "<group>"; };
+		C15705182314CCD000AA535D /* Have.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Have.storyboard; sourceTree = "<group>"; };
+		C157051A2314CDFA00AA535D /* HaveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCell.swift; sourceTree = "<group>"; };
+		C157051B2314CDFA00AA535D /* HaveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveCell.xib; sourceTree = "<group>"; };
 		C169DA6D230692E9001EBE1E /* TaimeeLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaimeeLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C169DA70230692E9001EBE1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C169DA75230692E9001EBE1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -215,6 +231,8 @@
 			children = (
 				C155B3BA230F7CC400B10988 /* Ticket.storyboard */,
 				C155B3BC230F7CF200B10988 /* TicketViewController.swift */,
+				C15705142314CB6F00AA535D /* Reservation */,
+				C15705152314CC8500AA535D /* Have */,
 			);
 			path = Ticket;
 			sourceTree = "<group>";
@@ -226,6 +244,28 @@
 				C155B3C1230F7E9100B10988 /* EditProfileViewController.swift */,
 			);
 			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		C15705142314CB6F00AA535D /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				C157050E2314C9E200AA535D /* Reservation.storyboard */,
+				C157050A2314C9AF00AA535D /* ReservationTicketController.swift */,
+				C15705112314CB0F00AA535D /* ReservationCell.xib */,
+				C15705102314CB0F00AA535D /* ReservationCell.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		C15705152314CC8500AA535D /* Have */ = {
+			isa = PBXGroup;
+			children = (
+				C15705162314CCC100AA535D /* HaveTicketController.swift */,
+				C15705182314CCD000AA535D /* Have.storyboard */,
+				C157051A2314CDFA00AA535D /* HaveCell.swift */,
+				C157051B2314CDFA00AA535D /* HaveCell.xib */,
+			);
+			path = Have;
 			sourceTree = "<group>";
 		};
 		C169DA64230692E9001EBE1E = {
@@ -365,14 +405,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15705132314CB0F00AA535D /* ReservationCell.xib in Resources */,
 				C155B3C0230F7E7000B10988 /* EditProfile.storyboard in Resources */,
 				C155B3B1230E511A00B10988 /* GoogleService-Info.plist in Resources */,
 				C155B3B5230E76B200B10988 /* UserLogin.storyboard in Resources */,
 				C1CF3C1423124E4B007C2E14 /* ShopHome.storyboard in Resources */,
 				C155B3A3230D5A1F00B10988 /* Login.storyboard in Resources */,
+				C157050F2314C9E300AA535D /* Reservation.storyboard in Resources */,
 				C169DA7B230692EA001EBE1E /* LaunchScreen.storyboard in Resources */,
 				C155B3BB230F7CC400B10988 /* Ticket.storyboard in Resources */,
 				C169DA78230692EA001EBE1E /* Assets.xcassets in Resources */,
+				C157051D2314CDFA00AA535D /* HaveCell.xib in Resources */,
+				C15705192314CCD000AA535D /* Have.storyboard in Resources */,
 				C1FF4861230A5E90002B2CBD /* Profile.storyboard in Resources */,
 				C155B3A9230D663300B10988 /* Post.storyboard in Resources */,
 				C169DA76230692E9001EBE1E /* Home.storyboard in Resources */,
@@ -401,7 +445,12 @@
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RLBAlertsPickers/RLBAlertsPickers.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SPAlert/SPAlert.framework",
+				"${BUILT_PRODUCTS_DIR}/SPFakeBar/SPFakeBar.framework",
+				"${BUILT_PRODUCTS_DIR}/SPStorkController/SPStorkController.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
@@ -421,7 +470,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RLBAlertsPickers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPAlert.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPFakeBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPStorkController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
@@ -488,9 +542,12 @@
 				C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */,
 				C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */,
 				C155B3A7230D660400B10988 /* PostViewController.swift in Sources */,
+				C157051C2314CDFA00AA535D /* HaveCell.swift in Sources */,
 				C125A15A230ABEAA001B2BE0 /* DetailInteractor.swift in Sources */,
 				C155B39A230BBD7000B10988 /* User.swift in Sources */,
+				C15705172314CCC100AA535D /* HaveTicketController.swift in Sources */,
 				C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */,
+				C15705122314CB0F00AA535D /* ReservationCell.swift in Sources */,
 				C155B3AF230DB9CC00B10988 /* Ticket.swift in Sources */,
 				C1CF3C1223124E37007C2E14 /* ShopHomeViewController.swift in Sources */,
 				C125A156230A96A2001B2BE0 /* DetailTicketController.swift in Sources */,
@@ -502,6 +559,7 @@
 				C155B3BD230F7CF200B10988 /* TicketViewController.swift in Sources */,
 				C169DA71230692E9001EBE1E /* AppDelegate.swift in Sources */,
 				C155B3A0230D59D400B10988 /* ShopLoginViewController.swift in Sources */,
+				C157050C2314C9AF00AA535D /* ReservationTicketController.swift in Sources */,
 				C155B3AD230DB97600B10988 /* Shop.swift in Sources */,
 				C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */,
 				C155B3AB230D892C00B10988 /* Firestore + Populate.swift in Sources */,
@@ -656,7 +714,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -676,7 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77P3HR8235;
 				INFOPLIST_FILE = TaimeeLike/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

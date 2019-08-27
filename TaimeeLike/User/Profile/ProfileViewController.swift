@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import SPStorkController
+import RLBAlertsPickers
 
 class ProfileViewController: UIViewController {
 
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +27,20 @@ class ProfileViewController: UIViewController {
     @IBAction func editProfile(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "EditProfile", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController")
-        present(vc, animated: true)
+        let controller = storyboard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        let transitioningDelegate = SPStorkTransitioningDelegate()
+        transitioningDelegate.showCloseButton = false
+//        transitioningDelegate.customHeight = 800
+        transitioningDelegate.showIndicator = true
+        transitioningDelegate.indicatorColor = .blue
+        transitioningDelegate.hideIndicatorWhenScroll = true
+        transitioningDelegate.indicatorMode = .auto
+        controller.transitioningDelegate = transitioningDelegate
+        
+        
+        controller.modalPresentationStyle = .custom
+        controller.modalPresentationCapturesStatusBarAppearance = true
+        self.present(controller, animated: true, completion: nil)
     }
+    
 }

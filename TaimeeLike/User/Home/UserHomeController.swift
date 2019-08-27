@@ -46,11 +46,13 @@ class UserHomeController: UIViewController {
         
         setupCalendar()
         
+        
         tableView.bounces = false
 
         
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.register(UINib(nibName: "JobTableViewCell", bundle: nil), forCellReuseIdentifier: "JobTableViewCell")
     }
     
@@ -107,7 +109,11 @@ class UserHomeController: UIViewController {
     
     // カレンダーの初期設定
     func setupCalendar() {
+        calendarView.delegate = self
+        calendarView.dataSource = self
+        
         calendarView.scope = .week
+//        calendarView.setScope(.week, animated: true)
 //        calendarView.collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
 
         let weekDayLabel = self.calendarView.calendarWeekdayView.weekdayLabels
@@ -149,10 +155,45 @@ class UserHomeController: UIViewController {
     }
 }
 
-//extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
-//
-//
-//}
+extension UserHomeController: FSCalendarDelegate, FSCalendarDataSource {
+
+    // カレンダーのタップイベント
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let plusDate = date.adding(.day, value: 1)
+        
+        
+        let startDate: String = formatter.string(from: date)
+        let endDate: String = formatter.string(from: plusDate)
+        
+        print("Date型のdate:",date)
+        print("Date型のplusDate:", plusDate)
+        print("startDateのstring:",startDate)
+        print("endDateのstring:", endDate)
+     
+        db.tickets.whereField("startDate", isEqualTo: date)
+                  .whereField("startDate", isLessThan: plusDate).getDocuments { (snapshot, error) in
+            if let error = error {
+                print("カレンダーの日にちあったデータ取得　失敗！ error =>",error)
+            }
+            guard let snapshot = snapshot else {return}
+                    
+            print("snapshot count",snapshot.documents.count)
+            self.ticketData = []
+    
+            for ticketDocument in snapshot.documents {
+                
+                
+                if let newTicket = Ticket(document: ticketDocument) {
+                    self.ticketData.append(newTicket)
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
+}
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 

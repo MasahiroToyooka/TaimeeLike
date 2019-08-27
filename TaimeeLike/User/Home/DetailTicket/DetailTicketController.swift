@@ -18,23 +18,21 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     static func fromStoryboard(_ storyboard: UIStoryboard = UIStoryboard(name: "DetailJob", bundle: nil), forTicket ticket: Ticket) -> DetailTicketController {
         
         let controller = storyboard.instantiateViewController(withIdentifier: "DetailTicketController") as! DetailTicketController
-        controller.ticket = ticket
+        controller.ticketData = ticket
         return controller
     }
     
     // 
-    @IBOutlet weak var bottomContantView: UIView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var detailText: UILabel!
     @IBOutlet weak var attentionLabel: UILabel!
-    
-
-    
+    @IBOutlet weak var bottomContantView: UIView!
+    @IBOutlet weak var bottomPriceLabel: UILabel!
+    @IBOutlet weak var bottomDateLabel: UILabel!
     
     // 遷移せれるときにデータを受け取る用の変数
-    private var ticket: Ticket!
-
+    private var ticketData: Ticket!
     
     // お店についての画像
     @IBOutlet weak var pagerView: FSPagerView! {
@@ -48,7 +46,7 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     // pagerviewが何番目かを表示するやつ
     @IBOutlet weak var pageControl: FSPageControl! {
         didSet {
-            self.pageControl.numberOfPages = self.ticket.imageUrls?.count ?? 0
+            self.pageControl.numberOfPages = self.ticketData.imageUrls?.count ?? 0
             self.pageControl.contentHorizontalAlignment = .center
             self.pageControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         }
@@ -61,18 +59,14 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         pagerView.delegate = self
         pagerView.dataSource = self
         
-        navigationItem.title = ticket.text
-        textLabel.text = ticket.text
-        dateLabel.text = "\(ticket.startDate)~\(ticket.endDate)"
-        detailText.text = ticket.detailText
-        attentionLabel.text = ticket.attentionText
+        setupData()
         
-        
-        
-        
+        // 下のbottomContantViewに影をつけている
         bottomContantView.layer.shadowOffset = CGSize(width: 0, height: -2)
         bottomContantView.layer.shadowColor = UIColor.black.cgColor
+        // 濃さ
         bottomContantView.layer.shadowOpacity = 0.4
+        // ぼかし
         bottomContantView.layer.shadowRadius = 10
     }
 
@@ -85,29 +79,64 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return ticket.imageUrls?.count ?? 0
+        return ticketData.imageUrls?.count ?? 0
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.sd_setImage(with: URL(string: ticket.imageUrls?[index] ?? ""), completed: nil)
+        cell.imageView?.sd_setImage(with: URL(string: ticketData.imageUrls?[index] ?? ""), completed: nil)
         return cell
+    }
+    
+    // 受け取ったチケットのデータからコンポーネントに反映させる処理
+    func setupData() {
+        navigationItem.title = ticketData.text
+        textLabel.text = ticketData.text
+        detailText.text = ticketData.detailText
+        attentionLabel.text = ticketData.attentionText
+        
+        // Date型から各々好みのフォーマットに変える
+        let startFormatter = DateFormatter()
+        startFormatter.dateFormat = "yyyy年M月dd日 HH:mm"
+        let startDate: String = startFormatter.string(from: ticketData.startDate)
+        
+        let endFormatter = DateFormatter()
+        endFormatter.dateFormat = "HH:mm"
+        let endTime: String = endFormatter.string(from: ticketData!.endDate)
+        
+        // 2019年8月31日　18:00 ~ 22:00みたいにしている
+        dateLabel.text = "\(startDate) 〜 \(endTime)"
+        bottomDateLabel.text = "\(startDate) 〜 \(endTime)"
+        
+        if ticketData.price == nil {
+            bottomPriceLabel.text = ticketData.productText
+        } else {
+            bottomPriceLabel.text = "\(ticketData.price)円券"
+        }
+    }
+    
+    // チケットの状態を0から１に変える
+    func updateTicketState() {
+        db.tickets.document(ticketData.documentID).updateData([
+            "ticketState": 1
+            ])
     }
     
     @IBAction func applyButton(_ sender: UIButton) {
         updateTicketState()
         self.navigationController?.popViewController(animated: true)
         
+        print(user)
+        
+        
+        let userTickets = user?.allTicket?.append(ticketData.documentID)
+        
+        print(userTickets)
         
         db.users.document(Auth.auth().currentUser!.uid).updateData([
-            "allTicket": [ticket.documentID]
+            "allTicket": [userTickets]
         ])
     }
-    // チケットの状態を0から１に変える
-    func updateTicketState() {
-        db.tickets.document(ticket.documentID).updateData([
-                "ticketState": 1
-        ])
-    }
+
 }

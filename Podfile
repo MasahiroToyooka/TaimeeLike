@@ -19,6 +19,10 @@ target 'TaimeeLike' do
   pod 'IBAnimatable'
   pod 'Material', '~> 3.1.0'
   pod 'XLPagerTabStrip', '~> 9.0'
-
+  pod 'SPStorkController'
+  pod 'SPFakeBar'
+  pod 'SPAlert'
+  pod 'RLBAlertsPickers', '~> 1.1.2'
+  pod 'Segmentio'
 
 end

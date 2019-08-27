@@ -59,7 +59,13 @@ extension User: DocumentSerializable {
             let address = dictionary["address"] as? String,
             let phoneNumber = dictionary["phoneNumber"] as? Int,
             let allTicket = dictionary["allTicket"] as? [String] else { return nil }
-   
+//
+//        print("*",userID)
+//        print("*",name)
+//        print("*",birthDay)
+//        print("*",address)
+//        print("*",phoneNumber)
+//        print("*",allTicket)
         self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber, allTicket: allTicket)
     }
     

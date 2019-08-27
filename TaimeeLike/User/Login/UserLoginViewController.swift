@@ -21,6 +21,13 @@ class UserLoginViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+
+//        self.presentAsStork(controller)
+    }
 
 
     @IBAction func loginButton(_ sender: UIButton) {
@@ -43,7 +50,7 @@ class UserLoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        
+
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print("新規作成失敗", error)
@@ -51,5 +58,6 @@ class UserLoginViewController: UIViewController {
             }
             self.dismiss(animated: true)
         }
+
     }
 }

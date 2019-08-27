@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,8 +61,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019年8月24日 18:00~23:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBD-fp-8HN">
-                                                        <rect key="frame" x="22" y="67" width="229" height="21"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019年8月24日 18:00~23:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBD-fp-8HN" userLabel="2019年8月24日 18:00~23:00">
+                                                        <rect key="frame" x="22" y="67" width="360" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,11 +250,13 @@
                     <connections>
                         <outlet property="attentionLabel" destination="Vpn-oA-4NJ" id="FMI-L3-mDt"/>
                         <outlet property="bottomContantView" destination="eGs-hB-tDV" id="PPa-cN-ChB"/>
-                        <outlet property="dateLabel" destination="mBD-fp-8HN" id="MpS-Vb-M3o"/>
-                        <outlet property="detailText" destination="9kw-4M-OcP" id="SYF-mj-t2D"/>
+                        <outlet property="bottomDateLabel" destination="vnB-FP-CgR" id="bD4-qk-EwH"/>
+                        <outlet property="bottomPriceLabel" destination="NXz-6l-EWp" id="Oak-HJ-SoC"/>
+                        <outlet property="dateLabel" destination="mBD-fp-8HN" id="2Fh-43-uEo"/>
+                        <outlet property="detailText" destination="9kw-4M-OcP" id="Rb4-Ba-fci"/>
                         <outlet property="pageControl" destination="1Oo-fZ-iNH" id="h9Z-pg-Vst"/>
                         <outlet property="pagerView" destination="f0a-bh-tJA" id="8lg-5S-TR3"/>
-                        <outlet property="textLabel" destination="yyP-R6-30N" id="stU-ha-LV3"/>
+                        <outlet property="textLabel" destination="yyP-R6-30N" id="wgf-K4-DDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAn-eR-9jy" userLabel="First Responder" sceneMemberID="firstResponder"/>
