@@ -26,7 +26,7 @@ struct User {
     var address: String
     var phoneNumber: Int
     // 申し込んだチケットを全て入れる documentIDを
-    var allTicket: [String]?
+    var allTicket: [String] = []
 }
 
 extension User: DocumentSerializable {
@@ -80,7 +80,7 @@ extension User: DocumentSerializable {
             self.init(userID: userID, name: name, birthDay: birthDay.dateValue(), address: address, phoneNumber: phoneNumber, allTicket: allTicket)
             
         } else {
-            self.init(userID: userID, name: name, birthDay: birthDay.dateValue(), address: address, phoneNumber: phoneNumber, allTicket: nil)
+            self.init(userID: userID, name: name, birthDay: birthDay.dateValue(), address: address, phoneNumber: phoneNumber, allTicket: [])
         }
     }
     

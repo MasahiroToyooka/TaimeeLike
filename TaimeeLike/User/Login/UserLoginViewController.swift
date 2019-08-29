@@ -62,7 +62,7 @@ class UserLoginViewController: UIViewController {
                 return
             }
 
-            db.add(user: User(userID: user!.user.uid, name: name, birthDay: date, address: address, phoneNumber: phoneNum, allTicket: nil))
+            db.add(user: User(userID: user!.user.uid, name: name, birthDay: date, address: address, phoneNumber: phoneNum, allTicket: []))
             self.dismiss(animated: true)
         }
     }

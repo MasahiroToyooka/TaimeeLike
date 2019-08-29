@@ -31,11 +31,8 @@ class ReservationCell: UITableViewCell {
             // 2019年8月31日　18:00 ~ 22:00みたいにしている
             dateLabel.text = "\(startDate) 〜 \(endTime)"
             
-            if ticketData?.price == nil {
-                priceLabel.text = ticketData?.productText
-            } else {
-                priceLabel.text = "\(ticketData?.price)円券"
-            }
+            guard let price = ticketData?.price else { return }
+            priceLabel.text = "\(price)円券"
         }
     }
     

@@ -85,7 +85,7 @@ class EditProfileViewController: UIViewController {
             return
         }
         
-        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phoneNum, allTicket: nil))
+        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phoneNum, allTicket: []))
         dismiss(animated: true, completion: nil)
     }
 }

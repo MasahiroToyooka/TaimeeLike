@@ -22,12 +22,22 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         return controller
     }
     
+    // 仕事のタイトル内容
     @IBOutlet weak var textLabel: UILabel!
+    // 仕事の日付を書くラベル
     @IBOutlet weak var dateLabel: UILabel!
+    // 仕事の詳細をかくラベル
     @IBOutlet weak var detailText: UILabel!
+    
+    // 仕事の注意事項を乗せるラベル
     @IBOutlet weak var attentionLabel: UILabel!
+    
+    // 下のボタンとかラベルがまとめてあるView
     @IBOutlet weak var bottomContantView: UIView!
+    
+    // チケットの値段がl書かれているラベル
     @IBOutlet weak var bottomPriceLabel: UILabel!
+    // 日付を乗せるラベル
     @IBOutlet weak var bottomDateLabel: UILabel!
     
     // 遷移せれるときにデータを受け取る用の変数
@@ -109,11 +119,9 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         dateLabel.text = "\(startDate) 〜 \(endTime)"
         bottomDateLabel.text = "\(startDate) 〜 \(endTime)"
         
-        if ticketData.price == nil {
-            bottomPriceLabel.text = "\(ticketData.price)円券"
-        } else {
-            bottomPriceLabel.text = ticketData.productText
-        }
+        guard let price = ticketData?.price else { return }
+        bottomPriceLabel.text = "\(price)円券"
+
     }
     
     // チケットの状態を0から１に変える
@@ -132,13 +140,9 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
             print("userデータ取得失敗")
             return
         }
-        print("user?.allTicket: ",user.allTicket)
-
         // userの所有チケットに変更を加える
-        user.allTicket?.append(ticketData.documentID)
+        user.allTicket.append(ticketData.documentID)
         
-        print("ticketData.documentID: ", ticketData.documentID)
-        print("allticket: ",user.allTicket)
         // userデータの更新
         db.users.document(userID!).updateData([
             "allTicket": user.allTicket

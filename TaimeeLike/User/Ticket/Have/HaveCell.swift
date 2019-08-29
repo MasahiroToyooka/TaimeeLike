@@ -21,11 +21,8 @@ class HaveCell: UITableViewCell {
             shopName.text = ticketData?.shopInfo["shopName"] as! String
             shopAddress.text = ticketData?.shopInfo["address"] as! String
             
-            if ticketData?.price == nil {
-                priceLabel.text = ticketData?.productText
-            } else {
-                priceLabel.text = "\(ticketData?.price)円券"
-            }
+            guard let price = ticketData?.price else { return }
+            priceLabel.text = "\(price)円券"
         }
     }
             

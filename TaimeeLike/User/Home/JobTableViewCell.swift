@@ -42,11 +42,8 @@ class JobTableViewCell: UITableViewCell {
             dateLabel.text = "\(startDate) 〜 \(endTime)"
             
             
-            if ticketData?.price == nil {
-                priceText.text = ticketData?.productText
-            } else {
-                priceText.text = "\(ticketData?.price)円券"
-            }
+            guard let price = ticketData?.price else { return }
+            priceText.text = "\(price)円券"
         }
     }
     
