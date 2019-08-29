@@ -12,10 +12,16 @@ import UIKit
 import FirebaseAuth
 
 struct Shop {
-    
+    /// 会社の名前 株式会社〇〇
     var stockName: String
+    
+    /// お店の名前
     var shopName: String
+    
+    /// 店の住所
     var address: String
+    
+    /// お店のID
     var shopID : String
 }
 
@@ -67,6 +73,9 @@ extension Shop: DocumentSerializable {
 }
 
 extension Shop {
+    
+    
+    // サンプルデータを作るときに使うかもしれないやつ
     
     static let shopName = [
         "マクドナルド",

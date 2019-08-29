@@ -91,17 +91,19 @@ extension Ticket: DocumentSerializable {
             "attentionText": attentionText
         ]
     }
+}
+
+
+
+extension Ticket {
+    
+    // サンプルデータを作るときに使うかものやつ
     
     static func imageURL(number: Int) -> String {
         let URLString =
         "https://storage.googleapis.com/firestorequickstarts.appspot.com/food_\(number).png"
         return URLString
     }
-}
-
-
-
-extension Ticket {
     
     static func randomPhotoURL() -> URL {
         let number = RandomUniform(22) + 1

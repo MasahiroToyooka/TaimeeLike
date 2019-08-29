@@ -92,10 +92,10 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="dateLabel" destination="1R5-kK-qou" id="MN1-Sc-DNN"/>
-                <outlet property="detailText" destination="R50-KE-oPN" id="kaj-OV-vhO"/>
                 <outlet property="priceText" destination="an2-YA-dJe" id="pxU-Sn-Hep"/>
                 <outlet property="shopImageView" destination="lrg-qd-Mge" id="U3L-Jx-b9N"/>
-                <outlet property="titleText" destination="7NJ-TI-UlN" id="wC4-sf-5ob"/>
+                <outlet property="shopNameLabel" destination="7NJ-TI-UlN" id="h0N-6d-R6L"/>
+                <outlet property="titleText" destination="R50-KE-oPN" id="yMo-Vl-liR"/>
             </connections>
             <point key="canvasLocation" x="305.07246376811594" y="34.821428571428569"/>
         </tableViewCell>

@@ -13,17 +13,23 @@ import FirebaseAuth
 
 
 
-func RandomUniform(_ upperBound: Int) -> Int {
-    return Int(arc4random_uniform(UInt32(upperBound)))
-}
-
 struct User {
     
     var userID: String
+    
+    // ユーザーの名前
     var name: String
+    
+    // 残しとくやつ
     // var profileImage
+    
+    // 生年月日
     var birthDay: Date
+    
+    // 住所
     var address: String
+    
+    // 電話番号
     var phoneNumber: Int
     // 申し込んだチケットを全て入れる documentIDを
     var allTicket: [String] = []

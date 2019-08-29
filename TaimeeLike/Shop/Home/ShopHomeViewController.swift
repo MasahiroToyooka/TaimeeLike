@@ -30,6 +30,7 @@ class ShopHomeViewController: ButtonBarPagerTabStripViewController {
         settings.style.selectedBarBackgroundColor = UIColor(red: 254/255, green: 0, blue: 124/255, alpha: 1)
     }
     
+    // ログイン状態に応じてログイン画面を表示する
     func checkCurrentUser() {
         if userID == nil {
             
@@ -45,16 +46,15 @@ class ShopHomeViewController: ButtonBarPagerTabStripViewController {
         }
     }
     
-    
+    // 求人投稿ボタン
     @IBAction func postButton(_ sender: UIButton) {
         guard let shop = shop else {
-            
             print("postButtonにてショップのデータ取得失敗")
             return
         }
         
+        // 投稿画面に遷移
         let VC = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "Post") as! PostViewController
-        
         self.navigationController?.pushViewController(VC, animated: true)
     }
     
@@ -71,6 +71,8 @@ class ShopHomeViewController: ButtonBarPagerTabStripViewController {
     }
     
     
+    
+    // ログアウトボタン
     @IBAction func logoutButton(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()

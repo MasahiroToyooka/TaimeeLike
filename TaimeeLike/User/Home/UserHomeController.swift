@@ -14,11 +14,12 @@ import FirebaseAuth
 
 class UserHomeController: UIViewController {
         
-    /// カレンダー用のビュー
+    /// カレンダーが入っているビュ-のtopConstraint
     @IBOutlet weak var viewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
     
+    /// カレンダー表示用のビュー
     @IBOutlet weak var calendarView: FSCalendar!
 
     // 過去にスクロールされた合計のオフセット
@@ -36,6 +37,7 @@ class UserHomeController: UIViewController {
     var ticketData: [Ticket] = []
     
     
+    // チケットの変更内容を監視するやつ
     var ticketListener: ListenerRegistration?
     
    
@@ -65,9 +67,10 @@ class UserHomeController: UIViewController {
         stopListeningForTickets()
     }
 
+    // ユーザーのログイン状況に合わせてログイン画面を表示する
     func checkCurrentUser() {
         if Auth.auth().currentUser == nil {
-            
+            // ログインされていない場合
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "Login") as! UserLoginViewController
@@ -75,10 +78,11 @@ class UserHomeController: UIViewController {
                 self.present(vc, animated: true)
             }
         } else {
-            print(Auth.auth().currentUser!.uid)
+            print("Current userのid: ",Auth.auth().currentUser!.uid)
         }
     }
     
+    // チケットのデータを監視するやつ
     func startListeningForTickets() {
         // チケットの状態が０のやつ(企業が投稿して申し込みがされていない状態)のだけ取得
         let basicQuery = db.tickets.whereField("ticketState", isEqualTo: 0)
@@ -95,10 +99,12 @@ class UserHomeController: UIViewController {
                     self.ticketData.append(newTicket)
                 }
             }
+            // テーブルビューを更新
             self.tableView.reloadData()
         })
     }
     
+    // データベースの監視をストップする
     func stopListeningForTickets() {
         ticketListener?.remove()
         ticketListener = nil
@@ -110,11 +116,18 @@ class UserHomeController: UIViewController {
         calendarView.delegate = self
         calendarView.dataSource = self
         
+        // カレンダーの表示をweekに指定
         calendarView.scope = .week
+        
+
+//        https://teratail.com/questions/207602?whotofollow=
 //        calendarView.setScope(.week, animated: true)
 //        calendarView.collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 200)
 
+        
         let weekDayLabel = self.calendarView.calendarWeekdayView.weekdayLabels
+        
+        // カレンダーの色を土曜日は青,日曜日は赤, 平日は黒
         weekDayLabel[0].text = "日"
         weekDayLabel[0].textColor = .red
         weekDayLabel[1].text = "月"
@@ -131,41 +144,38 @@ class UserHomeController: UIViewController {
         weekDayLabel[6].textColor = .blue
     }
     
-
+    // スクロールの量でビューを上げ下げする
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let distanceDif = scrollView.contentOffset.y - pastDistance
         if distanceDif > 10 {
-            
+            // viewを隠す
             UIView.animate(withDuration: 0.3) {
                 self.viewTopConstraint.constant = -120
                 self.view.layoutIfNeeded()
             }
         } else if distanceDif < 10 {
+            // 元に戻す
             UIView.animate(withDuration: 0.3) {
                 self.viewTopConstraint.constant = 0
                 self.view.layoutIfNeeded()
             }
         }
-        
         pastDistance =  scrollView.contentOffset.y
     }
 }
 
+
+// MARK:- カレンダーライブラリのデリゲート
+
 extension UserHomeController: FSCalendarDelegate, FSCalendarDataSource {
 
-    // カレンダーのタップイベント
+    // カレンダーのタップイベントを検知
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         let plusDate = date.adding(.day, value: 1)
-        
-        
-        let startDate: String = formatter.string(from: date)
-        let endDate: String = formatter.string(from: plusDate)
-        きの
-     
+
+        // タップされた日付から1日足した日にちの期間で求人があるか検索する
         db.tickets.whereField("startDate", isGreaterThan: date)
                   .whereField("startDate", isLessThan: plusDate).getDocuments { (snapshot, error) in
             if let error = error {
@@ -173,7 +183,6 @@ extension UserHomeController: FSCalendarDelegate, FSCalendarDataSource {
             }
             guard let snapshot = snapshot else {return}
                     
-            print("snapshot count",snapshot.documents.count)
             self.ticketData = []
     
             for ticketDocument in snapshot.documents {

@@ -11,23 +11,26 @@ import SDWebImage
 
 class JobTableViewCell: UITableViewCell {
     
+    /// お店の画像とか乗せるやつ
     @IBOutlet weak var shopImageView: UIImageView!
-    
-    @IBOutlet weak var dateLabel: UILabel!
+
+    ///
+    @IBOutlet weak var shopNameLabel: UILabel!
     
     @IBOutlet weak var titleText: UILabel!
     
-    @IBOutlet weak var detailText: UILabel!
     @IBOutlet weak var priceText: UILabel!
-    
+    /// 日付のラベル
+    @IBOutlet weak var dateLabel: UILabel!
     
     var ticketData: Ticket? {
         didSet {
             
+            // 受け取ったデータからlabel, imageViewに反映
             guard let image = ticketData?.imageUrls else { return }
             shopImageView.sd_setImage(with: URL(string: image.first ?? ""))
+            shopNameLabel.text = ticketData?.shopInfo["shopName"] as! String
             titleText.text = ticketData?.text
-            detailText.text = ticketData?.detailText
             
             // Date型から各々好みのフォーマットに変える
             let startFormatter = DateFormatter()
@@ -51,7 +54,9 @@ class JobTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         backgroundColor = .white
-      
+
+//　残しとく
+// imageviewに影と角丸を加えるためのやつ、
 //        shopImageView.layer.shadowOffset = CGSize(width: 100, height: -200)
 //        shopImageView.layer.shadowColor = UIColor.black.cgColor
 //        shopImageView.layer.shadowOpacity = 0.8

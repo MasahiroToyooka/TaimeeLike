@@ -100,7 +100,7 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
     
     // 受け取ったチケットのデータからコンポーネントに反映させる処理
     func setupData() {
-        navigationItem.title = ticketData.text
+        navigationItem.title = ticketData.shopInfo["shopName"] as? String
         textLabel.text = ticketData.text
         detailText.text = ticketData.detailText
         attentionLabel.text = ticketData.attentionText

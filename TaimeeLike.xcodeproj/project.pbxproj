@@ -9,11 +9,6 @@
 /* Begin PBXBuildFile section */
 		C125A141230A65F9001B2BE0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A140230A65F9001B2BE0 /* ProfileViewController.swift */; };
 		C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */; };
-		C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A147230A88AA001B2BE0 /* ContainedButton .swift */; };
-		C125A14A230A8967001B2BE0 /* OutLinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A149230A8967001B2BE0 /* OutLinedButton.swift */; };
-		C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14B230A899D001B2BE0 /* TextButton.swift */; };
-		C125A14E230A8AA8001B2BE0 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14D230A8AA8001B2BE0 /* UIView.swift */; };
-		C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A14F230A8AFD001B2BE0 /* TextField.swift */; };
 		C125A154230A9663001B2BE0 /* DetailJob.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C125A153230A9663001B2BE0 /* DetailJob.storyboard */; };
 		C125A156230A96A2001B2BE0 /* DetailTicketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A155230A96A2001B2BE0 /* DetailTicketController.swift */; };
 		C125A158230A981E001B2BE0 /* DetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C125A157230A981E001B2BE0 /* DetailTransition.swift */; };
@@ -67,11 +62,6 @@
 		AE1DAE001234CFBB75E3C891 /* Pods_TaimeeLike.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaimeeLike.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C125A140230A65F9001B2BE0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessage.swift; sourceTree = "<group>"; };
-		C125A147230A88AA001B2BE0 /* ContainedButton .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainedButton .swift"; sourceTree = "<group>"; };
-		C125A149230A8967001B2BE0 /* OutLinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLinedButton.swift; sourceTree = "<group>"; };
-		C125A14B230A899D001B2BE0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
-		C125A14D230A8AA8001B2BE0 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		C125A14F230A8AFD001B2BE0 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		C125A153230A9663001B2BE0 /* DetailJob.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailJob.storyboard; sourceTree = "<group>"; };
 		C125A155230A96A2001B2BE0 /* DetailTicketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTicketController.swift; sourceTree = "<group>"; };
 		C125A157230A981E001B2BE0 /* DetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransition.swift; sourceTree = "<group>"; };
@@ -146,11 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				C125A145230A6CBA001B2BE0 /* SwiftMessage.swift */,
-				C125A147230A88AA001B2BE0 /* ContainedButton .swift */,
-				C125A149230A8967001B2BE0 /* OutLinedButton.swift */,
-				C125A14B230A899D001B2BE0 /* TextButton.swift */,
-				C125A14D230A8AA8001B2BE0 /* UIView.swift */,
-				C125A14F230A8AFD001B2BE0 /* TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -577,8 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C155B3B7230E974900B10988 /* UserLoginViewController.swift in Sources */,
-				C125A14E230A8AA8001B2BE0 /* UIView.swift in Sources */,
-				C125A148230A88AA001B2BE0 /* ContainedButton .swift in Sources */,
 				C125A146230A6CBA001B2BE0 /* SwiftMessage.swift in Sources */,
 				C155B3A7230D660400B10988 /* PostViewController.swift in Sources */,
 				C157051C2314CDFA00AA535D /* HaveCell.swift in Sources */,
@@ -592,7 +575,6 @@
 				C125A156230A96A2001B2BE0 /* DetailTicketController.swift in Sources */,
 				C12DBC252316A331006D25C5 /* UIViewController.swift in Sources */,
 				C155B3C2230F7E9100B10988 /* EditProfileViewController.swift in Sources */,
-				C125A14C230A899D001B2BE0 /* TextButton.swift in Sources */,
 				C155B398230BBD4C00B10988 /* CellModel.swift in Sources */,
 				C157052723163C1E00AA535D /* EnableCell.swift in Sources */,
 				C155B38E230ACB9300B10988 /* JobTableViewCell.swift in Sources */,
@@ -604,10 +586,8 @@
 				C1570520231633FB00AA535D /* EnableTicket.swift in Sources */,
 				C157050C2314C9AF00AA535D /* ReservationTicketController.swift in Sources */,
 				C155B3AD230DB97600B10988 /* Shop.swift in Sources */,
-				C125A150230A8AFD001B2BE0 /* TextField.swift in Sources */,
 				C155B3AB230D892C00B10988 /* Firestore + Populate.swift in Sources */,
 				C1FF485C2309211A002B2CBD /* UserHomeController.swift in Sources */,
-				C125A14A230A8967001B2BE0 /* OutLinedButton.swift in Sources */,
 				C15705222316376100AA535D /* IssueTicket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

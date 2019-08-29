@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xIC-PS-v0o">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,63 +15,103 @@
             <objects>
                 <viewController storyboardIdentifier="Post" id="xIC-PS-v0o" customClass="PostViewController" customModule="TaimeeLike" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3G-KD-m3d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-40-IJD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="588221537.10157895">
-                                    <!--2019-08-23 02:52:17 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ja"/>
-                            </datePicker>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lkZ-aF-EmW">
-                                <rect key="frame" x="0.0" y="252" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="588221622.86433303">
-                                    <!--2019-08-23 02:53:42 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                            </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-PR-ysg">
-                                <rect key="frame" x="183" y="476" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="detailText" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZm-fj-tJW">
-                                <rect key="frame" x="183" y="514" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1BL-s6-fgA">
-                                <rect key="frame" x="183" y="552" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注意事項" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luY-wX-WP8">
-                                <rect key="frame" x="183" y="590" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-jo-KGs">
-                                <rect key="frame" x="200" y="696" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="発行する"/>
-                                <connections>
-                                    <action selector="PostButton:" destination="xIC-PS-v0o" eventType="touchUpInside" id="ipS-ji-de9"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SpV-P0-Ozv">
+                                <rect key="frame" x="0.0" y="40" width="375" height="587"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="仕事始めの時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uil-72-yTz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="tJK-6b-OTE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-40-IJD">
+                                        <rect key="frame" x="0.0" y="27" width="375" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NaE-40-IJD" secondAttribute="height" multiplier="3:1" id="sf1-1q-BqL"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="588221537.10157895">
+                                            <!--2019-08-23 02:52:17 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="ja"/>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="終わりの時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfL-3k-tdp">
+                                        <rect key="frame" x="0.0" y="159" width="375" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6wK-Ea-lAS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lkZ-aF-EmW">
+                                        <rect key="frame" x="0.0" y="186" width="375" height="125"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="lkZ-aF-EmW" secondAttribute="height" multiplier="3:1" id="ruT-Kt-biB"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="588221622.86433303">
+                                            <!--2019-08-23 02:53:42 +0000-->
+                                        </date>
+                                        <locale key="locale" localeIdentifier="ja_JP"/>
+                                    </datePicker>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="仕事のタイトル" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hre-PR-ysg">
+                                        <rect key="frame" x="0.0" y="318" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cDl-U4-Xi6"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="仕事の詳細" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZm-fj-tJW">
+                                        <rect key="frame" x="0.0" y="385" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="j1j-Ux-aZW"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="チケットの値段" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1BL-s6-fgA">
+                                        <rect key="frame" x="0.0" y="452" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="WHT-RD-M7v"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="注意事項" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="luY-wX-WP8">
+                                        <rect key="frame" x="0.0" y="519" width="375" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="0vp-N7-3yn"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-jo-KGs">
+                                        <rect key="frame" x="0.0" y="586" width="375" height="1"/>
+                                        <state key="normal" title="発行する"/>
+                                        <connections>
+                                            <action selector="PostButton:" destination="xIC-PS-v0o" eventType="touchUpInside" id="ipS-ji-de9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RXo-Hn-qto" firstAttribute="trailing" secondItem="SpV-P0-Ozv" secondAttribute="trailing" id="KPI-HO-3ce"/>
+                            <constraint firstItem="SpV-P0-Ozv" firstAttribute="leading" secondItem="RXo-Hn-qto" secondAttribute="leading" id="WkB-YB-il0"/>
+                            <constraint firstItem="RXo-Hn-qto" firstAttribute="bottom" secondItem="SpV-P0-Ozv" secondAttribute="bottom" constant="40" id="WyY-Ob-mRa"/>
+                            <constraint firstItem="SpV-P0-Ozv" firstAttribute="top" secondItem="RXo-Hn-qto" secondAttribute="top" constant="20" id="pAN-YA-lrd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RXo-Hn-qto"/>
                     </view>
                     <connections>
