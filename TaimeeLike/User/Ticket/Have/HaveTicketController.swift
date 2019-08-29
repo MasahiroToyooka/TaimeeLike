@@ -15,7 +15,6 @@ class HaveTicketController: UIViewController, IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +26,7 @@ class HaveTicketController: UIViewController, IndicatorInfoProvider {
 
     }
     
-    
+    // セグメントのタイトル設定
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "保有チケット")
     }
@@ -45,7 +44,6 @@ extension HaveTicketController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         
         // HaveCellにデータを渡す
-        
         cell.ticketData = haveTicket[indexPath.row]
         
         return cell

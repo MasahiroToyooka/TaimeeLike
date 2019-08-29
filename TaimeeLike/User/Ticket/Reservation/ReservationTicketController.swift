@@ -40,6 +40,7 @@ extension ReservationTicketController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReservationCell
+        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
         // ReservationCellにデータを渡す
@@ -54,6 +55,9 @@ extension ReservationTicketController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print(123)
+        // ここでチケットん詳細に飛んで仕事完了処理をやる
+        // 完了したら Haveの画面に表示する
+        
     }
     
 }

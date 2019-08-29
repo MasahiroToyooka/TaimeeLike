@@ -11,16 +11,15 @@ import SDWebImage
 
 class JobTableViewCell: UITableViewCell {
     
-    /// お店の画像とか乗せるやつ
+    // お店の画像とか乗せるやつ
     @IBOutlet weak var shopImageView: UIImageView!
-
-    ///
+    // お店の名前
     @IBOutlet weak var shopNameLabel: UILabel!
-    
+    // 仕事のタイトル
     @IBOutlet weak var titleText: UILabel!
-    
+    // チケットの値段
     @IBOutlet weak var priceText: UILabel!
-    /// 日付のラベル
+    // 日付のラベル
     @IBOutlet weak var dateLabel: UILabel!
     
     var ticketData: Ticket? {
@@ -29,7 +28,7 @@ class JobTableViewCell: UITableViewCell {
             // 受け取ったデータからlabel, imageViewに反映
             guard let image = ticketData?.imageUrls else { return }
             shopImageView.sd_setImage(with: URL(string: image.first ?? ""))
-            shopNameLabel.text = ticketData?.shopInfo["shopName"] as! String
+            shopNameLabel.text = ticketData?.shopInfo["shopName"] as? String
             titleText.text = ticketData?.text
             
             // Date型から各々好みのフォーマットに変える
