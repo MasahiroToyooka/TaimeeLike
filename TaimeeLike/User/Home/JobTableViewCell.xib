@@ -67,7 +67,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop1" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-qd-Mge">
-                        <rect key="frame" x="20" y="24" width="129.5" height="129.5"/>
+                        <rect key="frame" x="20" y="10" width="107.5" height="107.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lrg-qd-Mge" secondAttribute="height" multiplier="1:1" id="2bD-wh-zIQ"/>
                         </constraints>
@@ -77,11 +77,11 @@
                 <constraints>
                     <constraint firstItem="EFA-OA-SEn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="2iz-7A-nKu"/>
                     <constraint firstAttribute="bottom" secondItem="EFA-OA-SEn" secondAttribute="bottom" constant="4" id="6Ud-iG-g3u"/>
-                    <constraint firstAttribute="bottom" secondItem="lrg-qd-Mge" secondAttribute="bottom" constant="24" id="BuR-h1-yAK"/>
                     <constraint firstItem="EFA-OA-SEn" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.8" id="CMZ-PT-zKh"/>
-                    <constraint firstItem="lrg-qd-Mge" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="JHQ-Io-7XN"/>
                     <constraint firstAttribute="trailing" secondItem="EFA-OA-SEn" secondAttribute="trailing" constant="8" id="OMg-6E-WaS"/>
+                    <constraint firstItem="lrg-qd-Mge" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="g2k-Cn-CUJ"/>
                     <constraint firstItem="lrg-qd-Mge" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="k95-pL-wd1"/>
+                    <constraint firstAttribute="bottom" secondItem="lrg-qd-Mge" secondAttribute="bottom" constant="60" id="qtZ-3i-34o"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
