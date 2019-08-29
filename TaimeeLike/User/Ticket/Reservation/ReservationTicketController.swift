@@ -11,12 +11,10 @@ import XLPagerTabStrip
 
 class ReservationTicketController: UIViewController, IndicatorInfoProvider {
   
-    
 
     @IBOutlet weak var tableView: UITableView!
     
     
-    var item = IndicatorInfo(title: "予約チケット")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,29 +25,35 @@ class ReservationTicketController: UIViewController, IndicatorInfoProvider {
         tableView.register(UINib(nibName: "ReservationCell", bundle: nil), forCellReuseIdentifier: "Cell")
 
     }
+
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return item
+        return IndicatorInfo(title: "予約チケット")
     }
-
 }
 
 extension ReservationTicketController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return reservationTicket.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReservationCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
 
-        cell.backgroundColor = .blue
+        // ReservationCellにデータを渡す
+        cell.ticketData = reservationTicket[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(123)
     }
     
 }

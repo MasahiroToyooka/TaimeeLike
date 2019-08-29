@@ -43,6 +43,7 @@ extension User: DocumentSerializable {
         //これは、セキュリティルールを使用してサーバーで確認する必要があるものです。
         //一貫性のあるデータベースを維持するには、すべてのユーザーを最上位に保存する必要があります
         //ユーザーIDによるユーザーコレクション。 一部のクエリは、この一貫性に依存しています。
+        print("userID: \(userID), documentID: \(documentID)")
         precondition(userID == documentID)
         
         self.init(dictionary: dictionary)
@@ -53,20 +54,34 @@ extension User: DocumentSerializable {
     ///一意の識別子が無料で付属しているため、一意の識別子を生成します。
     public init?(dictionary: [String: Any]) {
         
+  
+//        使うかもだから残しとく
+//        print(dictionary["userID"] as? String)
+//        print(dictionary["name"] as? String)
+//        let birth = dictionary["birthDay"] as? Timestamp
+//        print(birth)
+//        print(dictionary["address"] as? String)
+//        print(dictionary["phoneNumber"] as? Int)
+//        print(dictionary["allTicket"] as? [String])
+
+        
         guard let userID = dictionary["userID"] as? String,
             let name = dictionary["name"] as? String,
-            let birthDay = dictionary["birthDay"] as? Date,
+            let birthDay = dictionary["birthDay"] as? Timestamp,
             let address = dictionary["address"] as? String,
-            let phoneNumber = dictionary["phoneNumber"] as? Int,
-            let allTicket = dictionary["allTicket"] as? [String] else { return nil }
-//
-//        print("*",userID)
-//        print("*",name)
-//        print("*",birthDay)
-//        print("*",address)
-//        print("*",phoneNumber)
-//        print("*",allTicket)
-        self.init(userID: userID, name: name, birthDay: birthDay, address: address, phoneNumber: phoneNumber, allTicket: allTicket)
+            let phoneNumber = dictionary["phoneNumber"] as? Int else {
+                print("user初期化失敗")
+                return nil
+        }
+        
+        // allTicketがnilの時の場初期化の場合分け
+        if let allTicket = dictionary["allTicket"] as? [String] {
+        
+            self.init(userID: userID, name: name, birthDay: birthDay.dateValue(), address: address, phoneNumber: phoneNumber, allTicket: allTicket)
+            
+        } else {
+            self.init(userID: userID, name: name, birthDay: birthDay.dateValue(), address: address, phoneNumber: phoneNumber, allTicket: nil)
+        }
     }
     
     public init?(document: QueryDocumentSnapshot) {

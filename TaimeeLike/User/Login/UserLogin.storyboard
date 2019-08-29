@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="geO-4E-hZm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8hq-n8-44G">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,51 +18,135 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1b-IM-WGy">
-                                <rect key="frame" x="159" y="233" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jU4-aK-GuU">
-                                <rect key="frame" x="159" y="291" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-qm-0wE">
-                                <rect key="frame" x="20" y="832" width="138" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="お店の登録はこちら"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnm-d9-n8I">
-                                <rect key="frame" x="191" y="553" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="サインイン"/>
-                                <connections>
-                                    <action selector="signupButton:" destination="geO-4E-hZm" eventType="touchUpInside" id="6t4-gm-Ok7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ef-rk-mH7">
-                                <rect key="frame" x="198" y="442" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ログイン"/>
-                                <connections>
-                                    <action selector="loginButton:" destination="geO-4E-hZm" eventType="touchUpInside" id="aGh-hb-nM0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-E4-Kf2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="754"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="ei8-DU-9AF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ztc-zb-Km1">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1b-IM-WGy">
+                                                <rect key="frame" x="0.0" y="57" width="414" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jU4-aK-GuU">
+                                                <rect key="frame" x="0.0" y="114" width="414" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="住所" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vm8-DE-f2v">
+                                                <rect key="frame" x="0.0" y="171" width="414" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電話番号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xob-4d-vTP">
+                                                <rect key="frame" x="0.0" y="228" width="414" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wIk-xD-MLl">
+                                        <rect key="frame" x="0.0" y="285" width="414" height="189.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生年月日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F70-gt-ayr">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="puf-U0-EIW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ij-Jf-pYB">
+                                                <rect key="frame" x="0.0" y="24" width="414" height="165.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1ij-Jf-pYB" secondAttribute="height" multiplier="5:2" id="paA-dB-S1n"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="588759775.32960403">
+                                                    <!--2019-08-29 08:22:55 +0000-->
+                                                </date>
+                                                <locale key="locale" localeIdentifier="ja_JP"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XUi-id-gX5">
+                                        <rect key="frame" x="0.0" y="501.5" width="414" height="252.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ef-rk-mH7">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                                <state key="normal" title="ログイン"/>
+                                                <connections>
+                                                    <action selector="loginButton:" destination="geO-4E-hZm" eventType="touchUpInside" id="aGh-hb-nM0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnm-d9-n8I">
+                                                <rect key="frame" x="0.0" y="91" width="414" height="70.5"/>
+                                                <state key="normal" title="サインイン"/>
+                                                <connections>
+                                                    <action selector="signupButton:" destination="geO-4E-hZm" eventType="touchUpInside" id="6t4-gm-Ok7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-qm-0wE">
+                                                <rect key="frame" x="0.0" y="181.5" width="414" height="71"/>
+                                                <state key="normal" title="お店の登録はこちら"/>
+                                                <connections>
+                                                    <action selector="switchShop:" destination="geO-4E-hZm" eventType="touchUpInside" id="K8s-rK-FKA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bxE-E4-Kf2" firstAttribute="top" secondItem="2Cg-bZ-DEp" secondAttribute="top" id="K8d-Si-68y"/>
+                            <constraint firstItem="2Cg-bZ-DEp" firstAttribute="trailing" secondItem="bxE-E4-Kf2" secondAttribute="trailing" id="WuJ-xb-Ocb"/>
+                            <constraint firstItem="2Cg-bZ-DEp" firstAttribute="bottom" secondItem="bxE-E4-Kf2" secondAttribute="bottom" constant="20" id="rX3-IR-ong"/>
+                            <constraint firstItem="bxE-E4-Kf2" firstAttribute="leading" secondItem="2Cg-bZ-DEp" secondAttribute="leading" id="sbP-sM-RFl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2Cg-bZ-DEp"/>
                     </view>
+                    <navigationItem key="navigationItem" id="d4b-6L-xdc"/>
                     <connections>
+                        <outlet property="addressTextField" destination="Vm8-DE-f2v" id="nKM-4Q-88P"/>
+                        <outlet property="datePicker" destination="1ij-Jf-pYB" id="Xwr-g4-mPU"/>
                         <outlet property="emailTextField" destination="a1b-IM-WGy" id="V7q-Ek-U7l"/>
+                        <outlet property="nameTextField" destination="ztc-zb-Km1" id="EOm-5I-PKM"/>
                         <outlet property="passwordTextField" destination="jU4-aK-GuU" id="ona-SE-cch"/>
+                        <outlet property="phoneTextField" destination="Xob-4d-vTP" id="Jwk-FA-3N5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQO-h1-tNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266.6666666666667" y="78.348214285714278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tge-vv-RNL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8hq-n8-44G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z20-K5-B5i">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="geO-4E-hZm" kind="relationship" relationship="rootViewController" id="bhJ-0d-CrF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y9a-fd-UYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356.52173913043481" y="78.348214285714278"/>
         </scene>

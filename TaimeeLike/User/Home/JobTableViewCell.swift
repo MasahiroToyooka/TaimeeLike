@@ -25,7 +25,7 @@ class JobTableViewCell: UITableViewCell {
         didSet {
             
             guard let image = ticketData?.imageUrls else { return }
-            shopImageView.sd_setImage(with: URL(string: image.first ?? ""), completed: nil)
+            shopImageView.sd_setImage(with: URL(string: image.first ?? ""))
             titleText.text = ticketData?.text
             detailText.text = ticketData?.detailText
             
@@ -65,7 +65,5 @@ class JobTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-    
 }

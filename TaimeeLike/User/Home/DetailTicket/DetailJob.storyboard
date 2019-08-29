@@ -210,16 +210,14 @@
                                             <action selector="applyButton:" destination="eZa-id-pDJ" eventType="touchUpInside" id="iNR-BT-fZ4"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2019年8月24日 18:00~23:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnB-FP-CgR">
-                                        <rect key="frame" x="8" y="43" width="229" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年8月24日 18:00~23:00 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnB-FP-CgR">
+                                        <rect key="frame" x="8" y="45.5" width="229" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5000円（商品券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXz-6l-EWp">
-                                        <rect key="frame" x="8" y="8" width="128" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000円（商品券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXz-6l-EWp">
+                                        <rect key="frame" x="8" y="11" width="226" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -227,10 +225,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="vnB-FP-CgR" firstAttribute="leading" secondItem="eGs-hB-tDV" secondAttribute="leading" constant="8" id="7gI-kC-GdA"/>
+                                    <constraint firstItem="vnB-FP-CgR" firstAttribute="top" secondItem="NXz-6l-EWp" secondAttribute="bottom" constant="14" id="DnF-mQ-7vo"/>
+                                    <constraint firstItem="6j3-ik-a7S" firstAttribute="leading" secondItem="NXz-6l-EWp" secondAttribute="trailing" constant="14" id="ILh-aQ-17y"/>
                                     <constraint firstAttribute="trailing" secondItem="6j3-ik-a7S" secondAttribute="trailing" constant="16" id="OjN-dE-PeI"/>
                                     <constraint firstAttribute="height" constant="100" id="TmX-su-cQN"/>
                                     <constraint firstAttribute="bottom" secondItem="6j3-ik-a7S" secondAttribute="bottom" constant="40" id="YUb-IN-cyr"/>
                                     <constraint firstItem="6j3-ik-a7S" firstAttribute="top" secondItem="eGs-hB-tDV" secondAttribute="top" constant="10" id="Yp6-SB-tZ2"/>
+                                    <constraint firstItem="NXz-6l-EWp" firstAttribute="leading" secondItem="eGs-hB-tDV" secondAttribute="leading" constant="8" id="ny6-36-xRo"/>
+                                    <constraint firstItem="6j3-ik-a7S" firstAttribute="leading" secondItem="vnB-FP-CgR" secondAttribute="trailing" constant="11" id="rD3-wF-ifx"/>
+                                    <constraint firstAttribute="bottom" secondItem="vnB-FP-CgR" secondAttribute="bottom" constant="40" id="ue3-ZL-iZV"/>
                                 </constraints>
                             </view>
                         </subviews>

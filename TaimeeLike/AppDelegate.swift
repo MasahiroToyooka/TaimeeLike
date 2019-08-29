@@ -9,9 +9,26 @@
 import UIKit
 import Firebase
 
+
 let db = Firestore.firestore()
-var user: User?
+
 var userID = Auth.auth().currentUser?.uid
+
+/// ログインしているのユーザーのデータを入れるやつ
+var user: User?
+
+/// ログインしているショップのデータを入れるやつ
+var shop: Shop?
+
+
+/// UserのallTicketのチケット
+var userTicket = [Ticket]()
+
+/// 申し込みしたチケット
+var reservationTicket = [Ticket]()
+
+/// 仕事をして使えるようになったチケット
+var haveTicket = [Ticket]()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,39 +41,135 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
     }
     
-    
+    // Userデータを監視するやつ
     var userListener: ListenerRegistration?
     
+    // Shopのデータを監視するやつ
+    var shopLisner: ListenerRegistration?
+    
+    // ユーザーのデータを監視する
     func startListeningForUser() {
-        // チケットの状態が０のやつ(企業が投稿して申し込みがされていない状態)のだけ取得
-        let basicQuery = db.users.whereField("userID", isEqualTo: userID)
+        
+        guard let userID = userID else {
+            print("appdetegateにてuid取得失敗")
+            return
+        }
+        
+        let basicQuery = db.users.document(userID)
         
         userListener = basicQuery.addSnapshotListener({ (snapshot, error) in
             if let error = error {
                 print("ホームビューコントローラーにてチケットのデータ取得失敗: ", error)
                 return
             }
-            guard let document = snapshot?.documents.first else {
-                print("appdelegateのguard文でk弾かれています", snapshot)
+            guard let document = snapshot else {
+                print("appdelegateのguard文で弾かれています", snapshot)
                 return
             }
            
+            // 取得したデータをuserに格納
             user = User(document: document)
+            print("appdetegateにてuserのdocumentID: ",user?.documentID)
+            
+            self.fetchUserTicket()
         })
     }
     
-    private func stopListeningForUser() {
+    // allTicketに入っているdocumentIDと同じIDのTicketを取得
+    func fetchUserTicket() {
+        guard let allTicket = user?.allTicket else {
+            print("AllTicketのデータがありません")
+            return
+        }
+        
+        userTicket = []
+        
+        for i in 0..<allTicket.count {
+            
+            db.tickets.document(allTicket[i]).getDocument { (snapshot, error) in
+                
+                if let error = error {
+                    print("allTicketのデータ取得失敗: ",error)
+                    return
+                }
+                
+                guard let document = snapshot else { return }
+                
+                if let newTicket = Ticket(document: document) {
+                    
+                    // とってきたTicketデータをuserTicketに格納する
+                    userTicket.append(newTicket)
+                    
+                    print("userTicketの数: ",userTicket.count)
+                }
+                if i == 0 {
+                    self.checkTicketState()
+                }
+            }
+        }
+        print("userTicketの数!: ",userTicket.count)
+    }
+    // stateでticketを振り分ける
+    func checkTicketState() {
+        print("userTicketの数!!: ",userTicket.count)
+        
+        reservationTicket = []
+        haveTicket = []
+        
+        for i in 0..<userTicket.count {
+            
+            if userTicket[i].ticketState == 1 {
+                reservationTicket.append(userTicket[i])
+            } else if userTicket[i].ticketState == 2 {
+                haveTicket.append(userTicket[i])
+            }
+        }
+    }
+    
+    // データを監視するのをやめる
+    private func listeningStop() {
         userListener?.remove()
         userListener = nil
+        shopLisner?.remove()
+        shopLisner = nil
+    }
+    
+    
+    // shopのデータの変更を監視する
+    func startListeningForShop() {
+        
+        guard let userID = userID else {
+            print("appdetegateにてuid取得失敗")
+            return
+        }
+        
+        
+        let basicQuery = db.shops.document(userID)
+        
+        shopLisner = basicQuery.addSnapshotListener({ (snapshot, error) in
+            if let error = error {
+                print("ホームビューコントローラーにてチケットのデータ取得失敗: ", error)
+                return
+            }
+            guard let document = snapshot else {
+                print("appdelegateのguard文で弾かれています", snapshot)
+                return
+            }
+            
+            
+            shop = Shop(document: document)
+            print("appdetegateにてshopのdocumentID: ",shop?.documentID)
+        })
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         startListeningForUser()
+        startListeningForShop()
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        stopListeningForUser()
+        listeningStop()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -75,7 +188,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

@@ -57,11 +57,11 @@ class ShopLoginViewController: UIViewController {
                 return
             }
             // 認証成功
+            db.add(shop: Shop(stockName: stockName, shopName: shopName, address: address, shopID: user!.user.uid))
+
             print("新規作成成功")
             
-            self.dismiss(animated: true, completion: {
-                db.add(shop: Shop(stockName: stockName, shopName: shopName, address: address, shopID: user!.user.uid))
-            })
+            self.dismiss(animated: true)
         }
     }
     
@@ -86,5 +86,12 @@ class ShopLoginViewController: UIViewController {
             
             self.dismiss(animated: true)
         }
+    }
+    @IBAction func userLogin(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "UserLogin", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "Login")
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

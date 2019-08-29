@@ -84,6 +84,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96950322389999999" green="0.81942337750000005" blue="0.27808019519999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="priceLabel" destination="eU4-tL-qez" id="oeU-BU-ivM"/>
+                <outlet property="shopAddress" destination="TGx-jL-dNE" id="cgX-LO-tzY"/>
+                <outlet property="shopImage" destination="ozI-LU-nrq" id="NMH-tv-hRi"/>
+                <outlet property="shopName" destination="lbL-Dx-6yl" id="IIF-TN-cHv"/>
+            </connections>
             <point key="canvasLocation" x="226.08695652173915" y="167.07589285714286"/>
         </tableViewCell>
     </objects>

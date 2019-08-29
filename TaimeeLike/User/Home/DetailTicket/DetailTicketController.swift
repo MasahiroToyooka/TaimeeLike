@@ -22,7 +22,6 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         return controller
     }
     
-    // 
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var detailText: UILabel!
@@ -105,14 +104,15 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
         endFormatter.dateFormat = "HH:mm"
         let endTime: String = endFormatter.string(from: ticketData!.endDate)
         
+    
         // 2019年8月31日　18:00 ~ 22:00みたいにしている
         dateLabel.text = "\(startDate) 〜 \(endTime)"
         bottomDateLabel.text = "\(startDate) 〜 \(endTime)"
         
         if ticketData.price == nil {
-            bottomPriceLabel.text = ticketData.productText
-        } else {
             bottomPriceLabel.text = "\(ticketData.price)円券"
+        } else {
+            bottomPriceLabel.text = ticketData.productText
         }
     }
     
@@ -123,20 +123,28 @@ class DetailTicketController: UIViewController, FSPagerViewDelegate, FSPagerView
             ])
     }
     
+
     @IBAction func applyButton(_ sender: UIButton) {
+        
         updateTicketState()
-        self.navigationController?.popViewController(animated: true)
         
-        print(user)
+        guard var user = user else {
+            print("userデータ取得失敗")
+            return
+        }
+        print("user?.allTicket: ",user.allTicket)
+
+        // userの所有チケットに変更を加える
+        user.allTicket?.append(ticketData.documentID)
         
-        
-        let userTickets = user?.allTicket?.append(ticketData.documentID)
-        
-        print(userTickets)
-        
-        db.users.document(Auth.auth().currentUser!.uid).updateData([
-            "allTicket": [userTickets]
+        print("ticketData.documentID: ", ticketData.documentID)
+        print("allticket: ",user.allTicket)
+        // userデータの更新
+        db.users.document(userID!).updateData([
+            "allTicket": user.allTicket
         ])
+
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

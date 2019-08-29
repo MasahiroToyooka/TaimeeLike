@@ -13,28 +13,33 @@ import FirebaseAuth
 
 struct Ticket {
     
+    /// 仕事の始まりの時間
     var startDate: Date
+    /// 仕事の終わりの時間
     var endDate: Date
-    
-    // チケットを発行する店の情報
+    /// チケットを発行する店の情報
     var shopInfo: [String: Any]
-    // 商品券の値段
+    /// 商品券の値段
     var price: Int?
-    
-    // 商品の情報
+    /// 商品の情報
     var productText: String?
-    // 仕事内容のタイトル
+    /// 仕事内容のタイトル
     var text: String
-    // 仕事内容の詳細
+    /// 仕事内容の詳細
     var detailText: String
-    // 働く時の店が提供する注意事項
+    /// 働く時の店が提供する注意事項
     var attentionText: String
-    
+
     /// 企業がチケットを発行したら0, userが申し込んだら１、 仕事が完了したら２、　チケットを消費したら３
     var ticketState: Int
-    // チケットの画像
+    /// チケットの画像
     var imageUrls: [String]?
+    
+    /// ドキュメントID
     var documentID: String
+    
+    /// お店のID
+    var shopID: String
 }
 
 
@@ -52,13 +57,12 @@ extension Ticket: DocumentSerializable {
             let attentionText = dictionary["attentionText"] as? String,
             let ticketState = dictionary["ticketState"] as? Int,
             let imageUrls = dictionary["imageUrls"] as? [String],
-            let documentID = dictionary["documentID"] as? String else {
+            let documentID = dictionary["documentID"] as? String,
+            let shopID = dictionary["shopID"] as? String else {
                 print("Ticket 初期化失敗")
                 return nil
         }
-        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, productText: productText, text: text, detailText: detailText, attentionText: attentionText, ticketState: ticketState, imageUrls: imageUrls, documentID: documentID)
-        
-        print("初期化成功！！")
+        self.init(startDate: startDate.dateValue(), endDate: endDate.dateValue(), shopInfo: shopInfo, price: price, productText: productText, text: text, detailText: detailText, attentionText: attentionText, ticketState: ticketState, imageUrls: imageUrls, documentID: documentID, shopID: shopID)
     }
     
     
@@ -74,6 +78,7 @@ extension Ticket: DocumentSerializable {
     var documentData: [String : Any] {
         return [
             "documentID": documentID,
+            "shopID": shopID,
             "shopInfo": shopInfo,
             "price": price ?? 0,
             "productText": productText ?? "",
@@ -112,22 +117,7 @@ extension Ticket {
             imageURL(number: 4)
         ]
     
-//    "マクドナルド",
-//    "株式会社ユナイテッドアローズ",
-//    "すき家",
-//    "すかいらーくグループ",
-//    "株式会社良品計画 ",
-//    "吉野家",
-//    "株式会社ジーユー",
-//    "ケンタッキー",
-//    "株式会社ニトリ",
-//    "和民",
-//    "ミスタードーナッツ",
-//    "株式会社ユニクロ",
-//    "力の源ホールディングス",
-//    "株式会社ビックカメラ",
-//    "スターバックスコーヒー",
-//    "ドトール"
+
     static let texts: [String] = [
         "クルー募集！",
         "商品管理, 在庫仕分け！",

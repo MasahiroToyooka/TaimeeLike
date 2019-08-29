@@ -15,7 +15,6 @@ struct Shop {
     
     var stockName: String
     var shopName: String
-    //    var images: [UIImage]?
     var address: String
     var shopID : String
 }
@@ -55,17 +54,6 @@ extension Shop: DocumentSerializable {
         guard let data = document.data() else { return nil}
         self.init(documentID: document.documentID, dictionary: data)
     }
-    
-    //    ///新しいユーザーを返します。nilが渡された場合、または指定されていない場合、デフォルト名とphotoURLを提供します。
-    //    public init(shopID: String, shopName: String? = "吉野家", address: String)
-    
-    
-    //    /// uidの衝突をチェックせずに、ランダムに生成されたユーザーをデフォルト名で返します
-    //          ///およびプロフィール写真。
-    //    public init() {
-    //        let uid = UUID().uuidString
-    //        self.init(userID: uid)
-    //    }
     
     /// Firestoreでのユーザーオブジェクトの表現。
     public var documentData: [String : Any] {

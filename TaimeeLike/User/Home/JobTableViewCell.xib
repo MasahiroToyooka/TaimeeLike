@@ -12,48 +12,50 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobTableViewCell" rowHeight="166" id="KGk-i7-Jjw" customClass="JobTableViewCell" customModule="TaimeeLike" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="332" height="166"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobTableViewCell" rowHeight="178" id="KGk-i7-Jjw" customClass="JobTableViewCell" customModule="TaimeeLike" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="357" height="178"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="332" height="165.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="357" height="177.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-OA-SEn">
-                        <rect key="frame" x="58.5" y="4" width="265.5" height="157.5"/>
+                        <rect key="frame" x="63.5" y="4" width="285.5" height="169.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bqU-3R-osZ">
-                                <rect key="frame" x="100" y="10" width="165.5" height="137.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="bqU-3R-osZ">
+                                <rect key="frame" x="100" y="10" width="185.5" height="149.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="吉野家" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-TI-UlN">
-                                        <rect key="frame" x="56.5" y="0.0" width="52" height="61.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="吉野家" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-TI-UlN">
+                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="床掃除、皿洗い、いろいろ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R50-KE-oPN">
-                                        <rect key="frame" x="33.5" y="74.5" width="98.5" height="10"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="185.5" height="28"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="8"/>
                                         <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000円分の商品券！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an2-YA-dJe">
-                                        <rect key="frame" x="15" y="97.5" width="135" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4000円分の商品券！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an2-YA-dJe">
+                                        <rect key="frame" x="0.0" y="81.5" width="185.5" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.95000621684350128" green="0.64866771729512962" blue="0.43856553893056482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年8月31日 18:00 ~ 20: 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R5-kK-qou">
-                                        <rect key="frame" x="23" y="127.5" width="119.5" height="10"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年8月31日 18:00 ~ 20: 00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R5-kK-qou">
+                                        <rect key="frame" x="0.0" y="122" width="185.5" height="27.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185.5" id="aGD-Yb-maq"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bqU-3R-osZ" firstAttribute="leading" secondItem="EFA-OA-SEn" secondAttribute="leading" constant="100" id="58M-Vm-HtM"/>
                             <constraint firstItem="bqU-3R-osZ" firstAttribute="top" secondItem="EFA-OA-SEn" secondAttribute="top" constant="10" id="JbZ-rh-OhA"/>
                             <constraint firstAttribute="bottom" secondItem="bqU-3R-osZ" secondAttribute="bottom" constant="10" id="Q1l-XQ-CKs"/>
                             <constraint firstAttribute="trailing" secondItem="bqU-3R-osZ" secondAttribute="trailing" id="wsk-I5-buC"/>
@@ -65,7 +67,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop1" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-qd-Mge">
-                        <rect key="frame" x="20" y="24" width="117.5" height="117.5"/>
+                        <rect key="frame" x="20" y="24" width="129.5" height="129.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="lrg-qd-Mge" secondAttribute="height" multiplier="1:1" id="2bD-wh-zIQ"/>
                         </constraints>
@@ -95,7 +97,7 @@
                 <outlet property="shopImageView" destination="lrg-qd-Mge" id="U3L-Jx-b9N"/>
                 <outlet property="titleText" destination="7NJ-TI-UlN" id="wC4-sf-5ob"/>
             </connections>
-            <point key="canvasLocation" x="286.95652173913044" y="30.803571428571427"/>
+            <point key="canvasLocation" x="305.07246376811594" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
     <resources>

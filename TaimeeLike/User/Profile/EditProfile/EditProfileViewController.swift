@@ -78,11 +78,14 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func registerUser(_ sender: UIButton) {
         
-        guard let name = nameTextField.text, let birthday: Date = birthPicker.date, let phone: Int = Int(phoneTextField.text!), let address = addressTextField.text else { return }
+        guard let name = nameTextField.text, let birthday: Date = birthPicker.date, let phone = phoneTextField.text, let address = addressTextField.text else { return }
+        guard let phoneNum: Int = Int(phone) else { return }
         
-        guard let uid = Auth.auth().currentUser?.uid else { return  }
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
         
-        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phone, allTicket: nil))
+        db.add(user: User(userID: uid, name: name, birthDay: birthday, address: address, phoneNumber: phoneNum, allTicket: nil))
         dismiss(animated: true, completion: nil)
     }
 }

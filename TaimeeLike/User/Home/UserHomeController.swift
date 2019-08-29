@@ -46,7 +46,6 @@ class UserHomeController: UIViewController {
         
         setupCalendar()
         
-        
         tableView.bounces = false
 
         
@@ -65,7 +64,7 @@ class UserHomeController: UIViewController {
         super.viewWillDisappear(animated)
         stopListeningForTickets()
     }
-    
+
     func checkCurrentUser() {
         if Auth.auth().currentUser == nil {
             
@@ -79,7 +78,6 @@ class UserHomeController: UIViewController {
             print(Auth.auth().currentUser!.uid)
         }
     }
-    
     
     func startListeningForTickets() {
         // チケットの状態が０のやつ(企業が投稿して申し込みがされていない状態)のだけ取得
@@ -101,7 +99,7 @@ class UserHomeController: UIViewController {
         })
     }
     
-    private func stopListeningForTickets() {
+    func stopListeningForTickets() {
         ticketListener?.remove()
         ticketListener = nil
     }
@@ -149,7 +147,6 @@ class UserHomeController: UIViewController {
                 self.view.layoutIfNeeded()
             }
         }
-//        print(distanceDif)
         
         pastDistance =  scrollView.contentOffset.y
     }
@@ -209,12 +206,9 @@ extension UserHomeController: UITableViewDelegate, UITableViewDataSource {
         
         // 画面遷移時に遷移先のticketにticketdataを渡す
         let controller = DetailTicketController.fromStoryboard(forTicket: ticketData[indexPath.row])
-//        self.tabBarController?.navigationController?.present(controller, animated: false, completion: nil)
 
-        self.navigationController?.pushViewController(controller, animated: true)
-        
         // 画面遷移を実行する際にUINavigationControllerDelegateの処理が実行される
-
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

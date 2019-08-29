@@ -22,8 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yb2-5x-Lxq">
                         <rect key="frame" x="100" y="10" width="414" height="152.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cvv-7i-Q4v">
-                                <rect key="frame" x="230" y="26" width="150" height="85.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cvv-7i-Q4v">
+                                <rect key="frame" x="230" y="20" width="150" height="114.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マクドナルド" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqK-Yj-FIZ">
                                         <rect key="frame" x="0.0" y="0.0" width="104" height="20.5"/>
@@ -32,14 +32,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzM-Vb-Ylb">
-                                        <rect key="frame" x="0.0" y="32.5" width="35" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="35" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="住所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGa-bK-BaV">
-                                        <rect key="frame" x="0.0" y="65" width="35" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="61" width="35" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="値段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5R-qJ-xhV">
+                                        <rect key="frame" x="0.0" y="91.5" width="39" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -51,8 +57,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cvv-7i-Q4v" firstAttribute="top" secondItem="Yb2-5x-Lxq" secondAttribute="top" constant="26" id="8cL-8b-XbS"/>
-                            <constraint firstAttribute="bottom" secondItem="cvv-7i-Q4v" secondAttribute="bottom" constant="41" id="LRx-sA-MBs"/>
+                            <constraint firstItem="cvv-7i-Q4v" firstAttribute="top" secondItem="Yb2-5x-Lxq" secondAttribute="top" constant="20" id="8cL-8b-XbS"/>
+                            <constraint firstAttribute="bottom" secondItem="cvv-7i-Q4v" secondAttribute="bottom" constant="18" id="LRx-sA-MBs"/>
                             <constraint firstAttribute="trailing" secondItem="cvv-7i-Q4v" secondAttribute="trailing" constant="34" id="O5l-FB-WYm"/>
                         </constraints>
                     </view>
@@ -78,6 +84,7 @@
             <connections>
                 <outlet property="addressLabel" destination="VGa-bK-BaV" id="e6P-B9-cOF"/>
                 <outlet property="dateLabel" destination="RzM-Vb-Ylb" id="grl-Yv-GsW"/>
+                <outlet property="priceLabel" destination="j5R-qJ-xhV" id="aSj-GV-4DX"/>
                 <outlet property="shopImage" destination="2Ll-xu-dMK" id="X0V-Ic-tae"/>
                 <outlet property="shopName" destination="FqK-Yj-FIZ" id="Gx5-Sb-UJL"/>
             </connections>
