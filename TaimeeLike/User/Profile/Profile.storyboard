@@ -93,6 +93,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AK-Xx-Dpr">
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="30"/>
                                                         <state key="normal" title="記入する"/>
+                                                        <connections>
+                                                            <segue destination="yTM-ys-OoE" kind="show" id="V0s-U3-oIi"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -118,6 +121,9 @@
                                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="30"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                         <state key="normal" title="記入する"/>
+                                                        <connections>
+                                                            <segue destination="yTM-ys-OoE" kind="show" id="zY6-Ah-7Oq"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -243,9 +249,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBF-74-MOW">
-                                                    <rect key="frame" x="117" y="6" width="153" height="30"/>
+                                                    <rect key="frame" x="155" y="6" width="77" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="アカウントの切り替え"/>
+                                                    <state key="normal" title="ログアウト"/>
+                                                    <connections>
+                                                        <action selector="logoutButton:" destination="Lfp-Nk-1EQ" eventType="touchUpInside" id="YfO-TF-AJd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -261,8 +270,9 @@
                     <navigationItem key="navigationItem" title="設定" id="MMg-Bc-XnA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZNy-CX-eJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lfp-Nk-1EQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="-215"/>
+            <point key="canvasLocation" x="2820" y="-927"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ATV-VM-AiS">
@@ -272,17 +282,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="間に合いませんでした" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoL-wv-1IQ">
-                                <rect key="frame" x="50.5" y="429.5" width="313.5" height="37"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="AuJ-1c-qcf">
+                                <rect key="frame" x="67" y="298" width="280" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="RkI-xa-GLz"/>
+                                    <constraint firstAttribute="height" constant="300" id="nTK-s6-zWP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="VoL-wv-1IQ" firstAttribute="centerX" secondItem="m01-3o-Y2j" secondAttribute="centerX" id="q4h-Xn-sM0"/>
-                            <constraint firstItem="VoL-wv-1IQ" firstAttribute="centerY" secondItem="m01-3o-Y2j" secondAttribute="centerY" id="ylx-3k-vnF"/>
+                            <constraint firstItem="AuJ-1c-qcf" firstAttribute="centerY" secondItem="m01-3o-Y2j" secondAttribute="centerY" id="XtA-1V-7yi"/>
+                            <constraint firstItem="AuJ-1c-qcf" firstAttribute="centerX" secondItem="m01-3o-Y2j" secondAttribute="centerX" id="tuK-9g-OSL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cz6-Sx-hn4"/>
                     </view>
@@ -305,15 +316,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lww-Bx-nH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="-215"/>
+            <point key="canvasLocation" x="2101" y="-927"/>
         </scene>
     </scenes>
     <resources>
         <image name="gear" width="25" height="25"/>
+        <image name="image1" width="230" height="219"/>
         <image name="profile3" width="194" height="259"/>
         <image name="profile_selected" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QU3-UQ-LM6"/>
+        <segue reference="zY6-Ah-7Oq"/>
     </inferredMetricsTieBreakers>
 </document>

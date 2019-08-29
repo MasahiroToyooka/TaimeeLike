@@ -52,12 +52,14 @@ class ShopLoginViewController: UIViewController {
         
         // FirebaseAuthの新規登録処理
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+
             if let error = error {
                 print("新規作成失敗", error)
                 return
             }
-            // 認証成功
             db.add(shop: Shop(stockName: stockName, shopName: shopName, address: address, shopID: user!.user.uid))
+
+            // 認証成功
 
             print("新規作成成功")
             
@@ -78,11 +80,11 @@ class ShopLoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
-                print("新規作成失敗",error)
+                print("ログイン失敗",error)
                 return
             }
             // 認証成功
-            print("新規作成成功")
+            print("ログイン成功")
             
             self.dismiss(animated: true)
         }

@@ -164,13 +164,9 @@ extension UserHomeController: FSCalendarDelegate, FSCalendarDataSource {
         
         let startDate: String = formatter.string(from: date)
         let endDate: String = formatter.string(from: plusDate)
-        
-        print("Date型のdate:",date)
-        print("Date型のplusDate:", plusDate)
-        print("startDateのstring:",startDate)
-        print("endDateのstring:", endDate)
+        きの
      
-        db.tickets.whereField("startDate", isEqualTo: date)
+        db.tickets.whereField("startDate", isGreaterThan: date)
                   .whereField("startDate", isLessThan: plusDate).getDocuments { (snapshot, error) in
             if let error = error {
                 print("カレンダーの日にちあったデータ取得　失敗！ error =>",error)
